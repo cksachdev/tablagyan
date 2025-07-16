@@ -14,6 +14,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+        
+        <style>
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+            
+            .animate-scroll {
+                animation: scroll 25s linear infinite;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            @media (max-width: 768px) {
+                .desktop-nav {
+                    display: none;
+                }
+                
+                .hero-text {
+                    font-size: 4rem !important;
+                }
+                
+                .hero-text-large {
+                    font-size: 5rem !important;
+                }
+                
+                .hero-text-xlarge {
+                    font-size: 6rem !important;
+                }
+                
+                .hero-subtext {
+                    margin-left: 2rem !important;
+                    font-size: 1.2rem !important;
+                }
+                
+                .hero-content {
+                    padding-left: 2rem !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .hero-text {
+                    font-size: 3rem !important;
+                }
+                
+                .hero-text-large {
+                    font-size: 3.5rem !important;
+                }
+                
+                .hero-text-xlarge {
+                    font-size: 4rem !important;
+                }
+                
+                .hero-subtext {
+                    margin-left: 1rem !important;
+                    font-size: 1rem !important;
+                }
+                
+                .hero-content {
+                    padding-left: 1rem !important;
+                }
+            }
+        </style>
     <script>
     function triggerAboutTransition() {
       const wrapper = document.getElementById('pageWrapper');
@@ -34,25 +111,45 @@
 
 </head>
 <body class="bg-white text-gray-800">
-  <!--navigation bar-->
-  <nav class="bg-yellow-000 shadow px-4 py-3 flex justify-between items-center">
-    <!-- Logo + Brand Name -->
-    <div class="flex items-center space-x-4">
-      <!-- Logo Image -->
-      <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo" class="w-14 h-22  object-cover">
-      
-      <!-- Brand Name -->
-      <span class="text-2xl font-bold text-red-800">TablaGyan</span>
-    </div>
-  
-    <!-- Navigation Links -->
-    <div class="space-x-10">
-      <a href="/" class="hover:text-red-600">Home</a>
-      <a href="/about.html" class="hover:text-red-600">About</a>
-      <a href="/courses.html" class="hover:text-red-600">Courses</a>
-      <a href="/contact.html" class="hover:text-red-600">Contact</a>
-    </div>
-  </nav>
+    <!-- Navigation Bar -->
+    <nav class="bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center relative border-b-4 border-[#b7410e]">
+      <!-- Logo + Brand Name -->
+      <div class="flex items-center space-x-4">
+        <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo"
+             class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md">
+        <span class="text-2xl md:text-3xl font-bold text-[#800000]" style="font-family: 'Cinzel', serif;">
+          TablaGyan
+        </span>
+      </div>
+    
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex space-x-8 text-[1.1rem] font-medium" style="font-family: 'Libre Baskerville', serif;">
+        <a href="index.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Home</a>
+        <a href="about.html" class="text-[#3e2723] hover:text-[#b7410e] transition">About</a>
+        <a href="index.html#courses" class="text-[#3e2723] hover:text-[#b7410e] transition">Courses</a>
+        <a href="contact.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Contact</a>
+        <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+      </div>
+    
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50">
+        <div class="flex flex-col space-y-2 p-4 text-lg" style="font-family: 'Libre Baskerville', serif;">
+          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
+          <a href="about.html" class="hover:text-[#b7410e] py-2">About</a>
+          <a href="courses.html" class="hover:text-[#b7410e] py-2">Courses</a>
+          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
+          <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+        </div>
+      </div>
+    </nav>
 
     <!-- Page Content -->
     <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">

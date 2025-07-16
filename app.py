@@ -1,5 +1,7 @@
 import os
 from flask import Flask, render_template, url_for
+from flask import request, render_template, redirect
+from flask_mail import mail, Message
 
 app = Flask(__name__)
 
@@ -24,6 +26,32 @@ def courses():
 @app.route("/gallery")
 def gallery():
     return render_template("gallery.html")
+
+@app.route('/send_mail', methods=['POST'])
+def send_mail():
+    name = request.form['name']
+    phone = request.form['phone']
+    email = request.form.get('email', 'Not provided')
+    purpose = request.form['purpose']
+    message = request.form.get('message', 'No message provided')
+    courses = request.form.getlist('courses') if purpose == 'enroll' else []
+
+    content = f"""Name: {name}
+Phone: {phone}
+Email: {email}
+Purpose: {purpose}
+Courses: {', '.join(courses) if courses else 'N/A'}
+Message: {message}"""
+
+    msg = Message(
+        subject="New Contact Form Submission - TablaGyan",
+        sender="noreply@tablagyan.com",  
+        recipients=["sanjanapatil.in@gmail.com"],  
+        body=content
+    )
+
+    mail.send(msg)
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(debug=True)

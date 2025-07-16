@@ -27,36 +27,307 @@
     }
 
 
+  function handlePurposeChange(value) {
+    const enrollOptions = document.getElementById('enrollOptions');
+    const messageBox = document.getElementById('messageBox');
+
+    if (value === 'enroll') {
+      enrollOptions.classList.remove('hidden');
+      messageBox.required = false;
+    } else if (value === 'demo') {
+      enrollOptions.classList.add('hidden');
+      messageBox.required = false;
+    } else {
+      enrollOptions.classList.add('hidden');
+      messageBox.required = true;
+    }
+  }
+
+
       </script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+        
+        <style>
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+            
+            .animate-scroll {
+                animation: scroll 25s linear infinite;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            @media (max-width: 768px) {
+                .desktop-nav {
+                    display: none;
+                }
+                
+                .hero-text {
+                    font-size: 4rem !important;
+                }
+                
+                .hero-text-large {
+                    font-size: 5rem !important;
+                }
+                
+                .hero-text-xlarge {
+                    font-size: 6rem !important;
+                }
+                
+                .hero-subtext {
+                    margin-left: 2rem !important;
+                    font-size: 1.2rem !important;
+                }
+                
+                .hero-content {
+                    padding-left: 2rem !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .hero-text {
+                    font-size: 3rem !important;
+                }
+                
+                .hero-text-large {
+                    font-size: 3.5rem !important;
+                }
+                
+                .hero-text-xlarge {
+                    font-size: 4rem !important;
+                }
+                
+                .hero-subtext {
+                    margin-left: 1rem !important;
+                    font-size: 1rem !important;
+                }
+                
+                .hero-content {
+                    padding-left: 1rem !important;
+                }
+            }
+        </style>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Purpose buttons
+    function selectPurpose(button, value) {
+      document.querySelectorAll('.purpose-btn').forEach(btn => {
+        btn.classList.remove('bg-[#a94438]', 'text-white', 'border-[#7b1e1e]');
+        btn.classList.add('bg-[#fffaf0]', 'text-[#7b1e1e]', 'border-[#c69b58]');
+      });
+
+      button.classList.remove('bg-[#fffaf0]', 'text-[#7b1e1e]', 'border-[#c69b58]');
+      button.classList.add('bg-[#a94438]', 'text-white', 'border-[#7b1e1e]');
+
+      document.getElementById('purposeInput').value = value;
+
+      handlePurposeChange(value); // Your logic to show/hide course div
+    }
+
+    // Attach click handlers to purpose buttons
+    document.querySelectorAll('.purpose-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.value;
+        selectPurpose(button, value);
+      });
+    });
+
+    // Course buttons
+    const courseButtons = document.querySelectorAll('.course-btn');
+    const hiddenContainer = document.getElementById('hiddenCourseInputs');
+
+    courseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const value = button.dataset.value;
+
+    if (button.classList.contains('selected')) {
+      button.classList.remove('selected');
+      button.classList.remove('bg-[#a94438]', 'text-white', 'border-[#7b1e1e]');
+      button.classList.add('bg-[#fffaf0]', 'text-[#7b1e1e]', 'border-[#c69b58]');
+
+      const inputToRemove = hiddenContainer.querySelector(`input[value="${value}"]`);
+      if (inputToRemove) inputToRemove.remove();
+    } else {
+      button.classList.add('selected');
+      button.classList.remove('bg-[#fffaf0]', 'text-[#7b1e1e]', 'border-[#c69b58]');
+      button.classList.add('bg-[#a94438]', 'text-white', 'border-[#7b1e1e]');
+
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'courses';
+      input.value = value;
+      hiddenContainer.appendChild(input);
+    }
+  });
+});
+  });
+</script>
 
 <link rel="stylesheet" href="static/css/style.css">
         
 
 </head>
 <body class="bg-white text-gray-800">
-  <!--navigation bar-->
-  <nav class="bg-yellow-000 shadow px-4 py-3 flex justify-between items-center">
-    <!-- Logo + Brand Name -->
-    <div class="flex items-center space-x-4">
-      <!-- Logo Image -->
-      <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo" class="w-14 h-22  object-cover">
-      
-      <!-- Brand Name -->
-      <span class="text-2xl font-bold text-red-800">TablaGyan</span>
-    </div>
-  
-    <!-- Navigation Links -->
-    <div class="space-x-10">
-      <a href="/" class="hover:text-red-600">Home</a>
-      <a href="/about.html" class="hover:text-red-600">About</a>
-      <a href="/courses.html" class="hover:text-red-600">Courses</a>
-      <a href="/contact.html" class="hover:text-red-600">Contact</a>
-    </div>
-  </nav>
+    <!-- Navigation Bar -->
+    <nav class="bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center relative border-b-4 border-[#b7410e]">
+      <!-- Logo + Brand Name -->
+      <div class="flex items-center space-x-4">
+        <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo"
+             class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md">
+        <span class="text-2xl md:text-3xl font-bold text-[#800000]" style="font-family: 'Cinzel', serif;">
+          TablaGyan
+        </span>
+      </div>
+    
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex space-x-8 text-[1.1rem] font-medium" style="font-family: 'Libre Baskerville', serif;">
+        <a href="index.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Home</a>
+        <a href="about.html" class="text-[#3e2723] hover:text-[#b7410e] transition">About</a>
+        <a href="index.html#courses" class="text-[#3e2723] hover:text-[#b7410e] transition">Courses</a>
+        <a href="contact.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Contact</a>
+        <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+      </div>
+    
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50">
+        <div class="flex flex-col space-y-2 p-4 text-lg" style="font-family: 'Libre Baskerville', serif;">
+          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
+          <a href="about.html" class="hover:text-[#b7410e] py-2">About</a>
+          <a href="courses.html" class="hover:text-[#b7410e] py-2">Courses</a>
+          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
+          <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Page Content -->
-    <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
-    Coming soon !!
+    <div id="pageWrapper" class="transition-transform duration-500 ease-in-out font-sans bg-[#fdf6e3]">
+      <section class="min-h-screen flex flex-col md:flex-row border-t-[6px] border-[#7b1e1e] relative">
+    
+        <!-- Left: Contact Form -->
+        <div class="w-full md:w-2/3 p-10 md:p-16 bg-gradient-to-br from-[#fffaf0] to-[#fdf6e3] relative">
+          <!-- Ornamental Top Border -->
+          <div class="absolute top-0 left-0 w-full h-4 bg-repeat-x bg-[url('/static/images/deco-top.png')]"></div>
+    
+          <h2 class="text-4xl font-bold text-[#7b1e1e] mb-10 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max">
+          Connect With TablaGyan
+          </h2>
+    
+          <form id="contactForm" method="POST" action="/send_mail" class="space-y-6">
+            <input type="text" name="name" required placeholder="Your Name"
+              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]" />
+    
+            <input type="tel" name="phone" required placeholder="Phone Number"
+              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]" />
+    
+            <input type="email" name="email" placeholder="Email (Optional)"
+              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]" />
+    
+              <div class="mb-6">
+                <label class="block text-lg font-semibold text-[#7b1e1e] mb-2">Purpose</label>
+                <div id="purposeToggleGroup" class="flex flex-wrap gap-4">
+                  <button type="button"
+                    onclick="selectPurpose(this, 'enroll')"
+                    class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300" data-value="enroll">
+                    Enroll into Class
+                  </button>
+                  <button type="button"
+                    onclick="selectPurpose(this, 'demo')"
+                    class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300">
+                    Demo Class
+                  </button>
+                  <button type="button"
+                    onclick="selectPurpose(this, 'other')"
+                    class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300">
+                    Other
+                  </button>
+                </div>
+              
+                <!-- Hidden actual radio input for form -->
+                <input type="hidden" name="purpose" id="purposeInput" value=""/>
+              </div>
+    
+              <div id="enrollOptions" class="hidden space-y-2 mt-4 ml-2">
+                <label class="block text-lg font-semibold text-[#7b1e1e] mb-2">Select Courses</label>
+                
+                <div class="flex flex-wrap gap-3">
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Tabla - Beginner">Tabla - Beginner</button>
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Tabla - Intermediate">Tabla - Intermediate</button>
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Tabla - Advanced">Tabla - Advanced</button>
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Vocals - Beginner">Vocals - Beginner</button>
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Vocals - Intermediate">Vocals - Intermediate</button>
+                  <button type="button" class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300" data-value="Vocals - Advanced">Vocals - Advanced</button>
+                </div>
+              
+                <!-- This goes *inside the form*, below the course buttons -->
+                <div id="hiddenCourseInputs"></div>
+              </div>
+    
+            <textarea name="message" id="messageBox"
+              class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner"
+              rows="4"
+              placeholder="Your Message (Optional)"></textarea>
+    
+            <button type="submit"
+              class="bg-[#a94438] hover:bg-[#7b1e1e] text-white text-lg font-bold px-8 py-3 rounded-xl shadow-xl transition duration-300 w-full border-2 border-[#c69b58]">
+              Submit Inquiry
+            </button>
+          </form>
+    
+          <!-- Decorative Bottom Border -->
+          <div class="absolute bottom-0 left-0 w-full h-4 bg-repeat-x bg-[url('/static/images/deco-bottom.png')]"></div>
+        </div>
+    
+        <!-- Right: Social Links with Cards -->
+        <div class="w-full md:w-1/3 bg-[#fcf0dc] p-10 flex flex-col justify-center items-start space-y-6 relative border-l-[6px] border-[#c69b58] shadow-inner">
+    
+          <h3 class="text-3xl font-bold text-[#7b1e1e] mb-6 tracking-wider">Reach Us</h3>
+    
+          <div class="space-y-4 w-full">
+            <div class="p-4 bg-white border-l-[8px] border-[#e55e45] shadow-md rounded-xl w-full hover:scale-[1.02] transition">
+              <p class="font-semibold text-[#4b2e2e]">Instagram</p>
+              <p>@tabla_gyan</p>
+            </div>
+            <div class="p-4 bg-white border-l-[8px] border-[#c4302b] shadow-md rounded-xl w-full hover:scale-[1.02] transition">
+              <p class="font-semibold text-[#4b2e2e]">YouTube</p>
+              <p>TablaGyan Channel</p>
+            </div>
+            <div class="p-4 bg-white border-l-[8px] border-[#3b5998] shadow-md rounded-xl w-full hover:scale-[1.02] transition">
+              <p class="font-semibold text-[#4b2e2e]">Facebook</p>
+              <p>TablaGyan Academy</p>
+            </div>
+            <div class="p-4 bg-white border-l-[8px] border-[#25d366] shadow-md rounded-xl w-full hover:scale-[1.02] transition">
+              <p class="font-semibold text-[#4b2e2e]">WhatsApp</p>
+              <p>+91-XXXX-XXXXXX</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- Footer -->
