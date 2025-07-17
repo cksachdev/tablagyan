@@ -20,8 +20,33 @@
     
     <style>
 
+.group:hover .group-hover\:block {
+    display: block;
+}
+
+#music-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 20px;
+    color: #800000;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.1s linear;
+}
+
+html {
+    scroll-padding-top: 100px; /* Equal to or a bit more than navbar height */
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
 }
 
     #overlay {
@@ -172,31 +197,53 @@ html {
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="pt-20 bg-white text-gray-800">
+
+    <div id="music-cursor">🎵</div>
     <!-- Navigation Bar -->
 <!-- Include Google Fonts in your <head> -->
     
 
-    <!-- Navigation Bar -->
-    <nav class="bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center relative border-b-4 border-[#b7410e]">
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
-        <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo"
-             class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md">
-        <span class="text-2xl md:text-3xl font-bold text-[#800000]" style="font-family: 'Cinzel', serif;">
-          TablaGyan
-        </span>
-      </div>
-    
-      <!-- Desktop Navigation Links -->
-      <div class="hidden md:flex space-x-8 text-[1.1rem] font-medium" style="font-family: 'Libre Baskerville', serif;">
-        <a href="index.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Home</a>
-        <a href="about.html" class="text-[#3e2723] hover:text-[#b7410e] transition">About</a>
-        <a href="index.html#courses" class="text-[#3e2723] hover:text-[#b7410e] transition">Courses</a>
-        <a href="contact.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Contact</a>
-        <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+<!-- Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]">
+    <!-- Logo + Brand Name -->
+    <div class="flex items-center space-x-4">
+      <img src="static/images/logo-light.jpeg" alt="TablaGyan Logo"
+           class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md">
+      <span class="text-2xl md:text-3xl font-bold text-[#800000]" style="font-family: 'Cinzel', serif;">
+        TablaGyan
+      </span>
     </div>
-    
+
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative" style="font-family: 'Libre Baskerville', serif;">
+    <a href="index.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Home</a>
+
+    <div class="relative group">
+        <div class="flex flex-col">
+            <a href="about.html" class="text-[#3e2723] hover:text-[#b7410e] transition">TablaGyan</a>
+            <div class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block">
+                <a href="about.html#academy" class="block px-4 py-2 hover:bg-[#f7e3b2]">TablaGyan Academy</a>
+                <a href="about.html#gurus" class="block px-4 py-2 hover:bg-[#f7e3b2]">TablaGyan Gurus</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative group">
+        <div class="flex flex-col">
+            <a href="tablavidya.html" class="text-[#3e2723] hover:text-[#b7410e] transition">TablaVidya</a>
+            <div class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block">
+                <a href="tablavidya.html#tablaology" class="block px-4 py-2 hover:bg-[#f7e3b2]">Tabla-ology</a>
+                <a href="tablavidya.html#ustaads" class="block px-4 py-2 hover:bg-[#f7e3b2]">Tabla Ustaads</a>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="index.html#courses" class="text-[#3e2723] hover:text-[#b7410e] transition">Courses</a>
+    <a href="contact.html" class="text-[#3e2723] hover:text-[#b7410e] transition">Contact</a>
+    <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+</div>
       <!-- Mobile Menu Button -->
       <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,16 +252,21 @@ html {
         </svg>
       </button>
     
-      <!-- Mobile Menu Dropdown -->
-      <div id="mobileMenu" class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50">
-        <div class="flex flex-col space-y-2 p-4 text-lg" style="font-family: 'Libre Baskerville', serif;">
-          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
-          <a href="about.html" class="hover:text-[#b7410e] py-2">About</a>
-          <a href="courses.html" class="hover:text-[#b7410e] py-2">Courses</a>
-          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
-          <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
-        </div>
-      </div>
+<!-- Mobile Menu Dropdown -->
+<div id="mobileMenu" class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50">
+    <div class="flex flex-col space-y-2 p-4 text-lg" style="font-family: 'Libre Baskerville', serif;">
+      <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
+      <a href="about.html" class="hover:text-[#b7410e] py-2">TablaGyan Academy</a>
+      <a href="about.html#gurus" class="hover:text-[#b7410e] py-2">TablaGyan Gurus</a>
+
+      <a href="tablavidya.html" class="hover:text-[#b7410e] py-2">TablaGyan Academy</a>
+      <a href="tablavidya.html#tabla-ustaads" class="hover:text-[#b7410e] py-2">TablaGyan Gurus</a>
+
+      <a href="index.html#courses" class="hover:text-[#b7410e] py-2">Courses</a>
+      <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
+      <a href="faq.html" class="text-[#3e2723] hover:text-[#b7410e] transition">FAQ</a>
+    </div>
+  </div>
     </nav>
 
     <!-- Page Content -->
@@ -682,6 +734,18 @@ html {
             activeBox = null;
         }
     });
+
+
+    const musicCursor = document.getElementById('music-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        musicCursor.style.left = e.clientX + 15 + 'px';
+        musicCursor.style.top = e.clientY + 25 + 'px';
+        musicCursor.style.opacity = 1;
+    });
+
+    
+
     
     </script>
 </body>
