@@ -1,0 +1,282 @@
+/* Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes slide-out-left {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+.slide-out-left {
+  animation: slide-out-left 0.6s ease forwards;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 1.6s ease forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1.2s ease-out forwards;
+}
+
+#music-toggle img {
+  transition: transform 0.3s ease;
+}
+
+#music-toggle:hover img {
+  transform: scale(1.1);
+}
+
+/* Smooth button animations */
+.purpose-btn,
+.course-btn {
+  transition: transform 0.3s ease;
+}
+.purpose-btn:hover,
+.course-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Social hover effect */
+.social-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.social-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+/* Mobile menu toggle */
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.active {
+  display: block;
+}
+
+/* Responsive typography for hero */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .hero-text {
+    font-size: 4rem !important;
+  }
+  .hero-text-large {
+    font-size: 5rem !important;
+  }
+  .hero-text-xlarge {
+    font-size: 6rem !important;
+  }
+  .hero-subtext {
+    margin-left: 2rem !important;
+    font-size: 1.2rem !important;
+  }
+  .hero-content {
+    padding-left: 2rem !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 3rem !important;
+  }
+  .hero-text-large {
+    font-size: 3.5rem !important;
+  }
+  .hero-text-xlarge {
+    font-size: 4rem !important;
+  }
+  .hero-subtext {
+    margin-left: 1rem !important;
+    font-size: 1rem !important;
+  }
+  .hero-content {
+    padding-left: 1rem !important;
+  }
+}
+
+/* Hover on group elements */
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+/* Music cursor */
+#music-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  font-size: 20px;
+  color: #800000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s linear;
+}
+
+/* Scroll behavior */
+html {
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+}
+
+/* Sticky navbar */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* Overlay transitions */
+#overlay {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  transition: opacity 0.4s ease;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Course box animation */
+.course-box {
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.course-box.expanded {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  width: 500px !important;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  background-color: #fef7e5 !important;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.course-box.expanded .short-desc,
+.course-box.expanded .click-more {
+  display: none;
+}
+.course-box.expanded .detailed {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Slide in animations */
+@keyframes slideFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-in-1 {
+  animation: slideFadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+.animate-slide-in-2 {
+  animation: slideFadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+.animate-slide-in-3 {
+  animation: slideFadeInUp 0.8s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Mobile responsiveness for menu */
+html,
+body {
+  overflow-x: hidden;
+}
+#menu-content {
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  width: 100vw;
+}
+#menu-toggle:checked ~ #menu-content {
+  max-height: 500px;
+}
+#menu-content a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #3e2723;
+  transition: background 0.2s ease;
+}
+#menu-content a:hover {
+  background-color: #f7e3b2;
+}
+
+/* Font */
+.hubballi-regular {
+  font-family: "Hubballi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
