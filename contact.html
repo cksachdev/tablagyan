@@ -153,7 +153,6 @@
         });
       });
     </script>
-
   </head>
   <body class="bg-white text-gray-800">
     <!-- Navigation Bar -->
@@ -310,6 +309,21 @@
       id="pageWrapper"
       class="transition-transform duration-500 ease-in-out font-sans bg-[#fdf6e3]"
     >
+      <audio
+        id="background-music"
+        src="/static/audio/tabla-bg.mp3"
+        loop
+      ></audio>
+
+      <!-- Music Toggle Icon -->
+      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+        <img
+          id="music-icon"
+          src="/static/volume-up.png"
+          alt="Music Toggle"
+          class="w-8 h-8"
+        />
+      </div>
       <section class="h-screen mt-20 w-full flex bg-white relative font-serif">
         <!-- Background Image on Left -->
         <div class="absolute inset-0 w-3/5">
@@ -580,5 +594,6 @@
     <script>
       AOS.init();
     </script>
+        <script src="index.js"></script>
   </body>
 </html>

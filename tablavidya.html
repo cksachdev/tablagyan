@@ -300,6 +300,21 @@
 
     <!-- Page Content -->
     <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
+      <audio
+        id="background-music"
+        src="/static/audio/tabla-bg.mp3"
+        loop
+      ></audio>
+
+      <!-- Music Toggle Icon -->
+      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+        <img
+          id="music-icon"
+          src="/static/volume-up.png"
+          alt="Music Toggle"
+          class="w-8 h-8"
+        />
+      </div>
       <section
         id="tablaology"
         class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16"
@@ -548,5 +563,6 @@
     <script>
       AOS.init();
     </script>
+        <script src="index.js"></script>
   </body>
 </html>

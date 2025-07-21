@@ -251,6 +251,21 @@
 
     <!-- Page Content -->
     <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
+      <audio
+        id="background-music"
+        src="/static/audio/tabla-bg.mp3"
+        loop
+      ></audio>
+
+      <!-- Music Toggle Icon -->
+      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+        <img
+          id="music-icon"
+          src="/static/volume-up.png"
+          alt="Music Toggle"
+          class="w-8 h-8"
+        />
+      </div>
       <header class="bg-[#fffaf0] p-6 border-b-2 border-[#c69b58]">
         <h1 class="text-3xl font-bold text-[#7b1e1e] text-center">
           Frequently Asked Questions
@@ -392,5 +407,7 @@
         <p>© 2025 TablaGyan. All rights reserved.</p>
       </footer>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
