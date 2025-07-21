@@ -153,6 +153,20 @@
   }
 }
 
+
+.visitor-counter {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom edge */
+  right: 20px;  /* Distance from the right edge */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.visitor-counter img {
+  width: 120px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
 /* Hover on group elements */
 .group:hover .group-hover\:block {
   display: block;
