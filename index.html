@@ -1,860 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>TablaGyan - School of Tabla</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tabla Gyan - Music School</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0c0a09;color: #f5f5f4;}
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-custom-yellow {
+            background-color: #facc15;}
+        .text-custom-yellow {
+            color: #facc15;}
+        .border-custom-yellow {
+            border-color: #facc15;}
+        .bg-custom-brown {
+            background-color: #44403c;}
+    </style>
+</head>
+<body class="bg-black text-stone-200">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<header class="relative text-center py-20">
+<div class="absolute inset-0">
+<img alt="Header background showing tablas" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsWAItQ1Xi9BtVR566kzRrBxoJLlv9xPr-nusPc-d5JLN7KPWHC_pAmuMQchhW7vMdG6yzoZDVGq0bfFeDA8vOZ8qFHx6nieZJJSfShNssTwGdVOjqGTWxu9HgOB28Vh_NwsuvkDUxbW1iUHCj7-pCmCs9YXz4o4Xqsy70QJ2ZtQKzcad_XG1Rd9iUf2EfejbcBraLYnGPfC4zrtgDalGjyEICA9TewHS74XHBnoxjK39i17_QJGHPu9gGH5T9qZH_haViANnHpw2i"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h1 class="font-playfair text-6xl md:text-8xl font-bold text-custom-yellow drop-shadow-lg">Tabla Gyan</h1>
+<p class="mt-4 text-xl text-stone-300">Learn, Share and Experience the JOY of Tabla...!</p>
+</div>
+</header>
+<nav class="bg-stone-900 sticky top-0 z-20 shadow-lg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-center h-16">
+<div class="hidden md:block">
+<div class="flex items-center space-x-8">
+<a class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2" href="#"><span class="material-icons">home</span>Home</a>
+<span class="text-custom-yellow text-xl font-thin">|</span>
+<a class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2" href="#"><span class="material-icons">music_note</span>Tabla Gyan</a>
+<span class="text-custom-yellow text-xl font-thin">|</span>
+<a class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2" href="#"><span class="material-icons">school</span>Tabla Vidyalay</a>
+<span class="text-custom-yellow text-xl font-thin">|</span>
+<a class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2" href="#"><span class="material-icons">person</span>Tabla Guru</a>
+<span class="text-custom-yellow text-xl font-thin">|</span>
+<a class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2" href="#"><span class="material-icons">contact_support</span>Contact Tabla Gyan</a>
+</div>
+</div>
+<div class="md:hidden">
+<button class="text-stone-300 hover:text-custom-yellow px-3 py-2 rounded-md text-sm font-medium">
+<span class="material-icons">menu</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2 space-y-12">
+<section>
+<h2 class="font-playfair text-4xl font-bold text-custom-yellow mb-4">Welcome to TablaGyan</h2>
+<p class="text-stone-300 leading-relaxed">
+                        TablaGyan - School of Tabla is a unique music school based in Bangalore, which focuses on imparting the knowledge of Music in general and Tabla in particular. The school is a decade old now and has been a guiding light to many "musically hungry" students. The school has trained more than 150 students now, and currently has a strength of 40+. TablaGyan has not only catered to the musical needs of the locals, but also the foreign nationals, of which most are grooming into quality players.
+                    </p>
+</section>
+<section>
+<h2 class="font-playfair text-4xl font-bold text-custom-yellow mb-4">Highlights of the school are</h2>
+<ul class="space-y-3 text-stone-300 list-none pl-0">
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Professional coaching from a well trained artist / teacher.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Music based coaching on Tabla.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Affiliated to music universities. Examination based coaching.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Dedicated individual attention given to students.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Active internet group for concerts alerts, discussion forms, downloads.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Flexible timings. Scheduling based on one of its kind software.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Exposure to concerts, workshops, jam sessions etc.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Application oriented teaching with emphasis on music.</li>
+<li class="flex items-start"><span class="material-icons text-custom-yellow mr-3">check_circle</span>Online Skype Coaching (one-to-one / group) available.</li>
+</ul>
+</section>
+</div>
+<aside class="space-y-12">
+<div class="bg-stone-900 p-8 rounded-lg shadow-xl border border-stone-800">
+<h3 class="font-playfair text-3xl font-bold text-custom-yellow mb-6 text-center">Member Log In</h3>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-stone-400 mb-2" for="username">Username:</label>
+<input class="w-full bg-stone-800 border border-stone-700 rounded-md py-2 px-3 text-stone-200 focus:outline-none focus:ring-2 focus:ring-custom-yellow" id="username" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-stone-400 mb-2" for="password">Password:</label>
+<input class="w-full bg-stone-800 border border-stone-700 rounded-md py-2 px-3 text-stone-200 focus:outline-none focus:ring-2 focus:ring-custom-yellow" id="password" type="password"/>
+</div>
+<button class="w-full bg-custom-yellow text-black font-bold py-2 px-4 rounded-md hover:bg-yellow-300 transition duration-300" type="submit">Login</button>
+</form>
+</div>
+<div class="bg-stone-900 p-8 rounded-lg shadow-xl border border-stone-800">
+<h3 class="font-playfair text-3xl font-bold text-custom-yellow mb-4">Upcoming Events</h3>
+<div class="space-y-4">
+<h4 class="text-xl font-semibold text-stone-200">Baithak Program Series</h4>
+<p class="text-stone-400">Concert by Guest Artist and Tabla Solos and Accompaniment by school students.</p>
+<a class="text-custom-yellow hover:underline" href="#">www.tablagyan.com</a>
+</div>
+<hr class="my-6 border-stone-700"/>
+<div class="space-y-4">
+<h4 class="text-xl font-semibold text-stone-200">"HINDUSTANI VOCAL CLASSES"</h4>
+<p class="text-stone-400">
+                            Venue: Tablagyan, Koramangala<br/>
+                            Date &amp; Time: Launched from Nov 2016<br/>
+                            TablaGyan has launched Hindustani sincine classes for students of all ages.
+                        </p>
+<button class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-500 transition duration-300 mt-2">Ruffle</button>
+</div>
+</div>
+<div class="relative h-64 rounded-lg overflow-hidden shadow-xl">
+<img alt="A student playing the tabla, with text overlay 'Feel the Tabla Rhythm'" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzLwiUU6Y4i1MDjFDJLlKzVZ7gmjbwkQbM9DsLsbdM4YkdMnQPvlhmALO1FEfVQFHApbHzlCdyAioyQTuYUcbm32e61cQ_IZZOB-am0WrPuUpkGqnH86UGQt5CXAUkNARaGJZaqqYP8pCRxt8qJCY6888YRT7AqSpMuINtn4-TWnt-zzGc8a7RK0rkRkPS_F6UP1wup7RmBhIiyy6QzNM-DnWkDnNnlQczNI4y1PDUj1HxXmzGRFk9xF-YCScBEZ85Oiq-kqZfWfqk"/>
+<div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+<h3 class="font-playfair text-4xl font-bold text-white text-center drop-shadow-md">Feel the <br/><span class="text-custom-yellow">Tabla Rhythm</span></h3>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-xl">
+<img alt="Close up of hands playing the tabla" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsrvy9OR5ShL6K50LjotI_fe38KEVE4kPSGwHToNro2SlXB_P1nj_l1sMvRQNTOvgAILjP_mUpGuaD67woh54-XZHBJNb-QEXQop_tbfOLR_6Z62tRetIKqX2_GQrQ-Dc5TkBrmTOcF3Njs-gngkLY8el4DmJj6FnQZdeAQdH1q5y7IeLdAGAljTwtK2Io-RLtBmN0bKOEvBKbN4X9y0z4ixExFFxMh5XRhQFHmClrzSkGqZah3RTTkrtmN_IRzkSomxiC61qdYlaG"/>
+</div>
+</aside>
+</main>
+<footer class="mt-12 py-8 border-t border-stone-800 flex justify-between items-center">
+<p class="text-stone-400 text-sm">© 2024 Tablagyan. All Rights Reserved.</p>
+<div class="flex items-center space-x-4">
+<img alt="Facebook icon" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChOQQ-_taND5NPNME0Mt8CDExrFqDRyTosHZ-fBvuoL_BDWEnj3kA0nyku-dQoMH2_W7c5zLDHwg4t6TJC-nUrVwWTVdXBJhuVjmk6V9fxJn50qV6H_RP8aAJI6qV3645JPyPHNojtQD2ec1b6yZlJtB6I9sK83ZkE-KMNgmw69FTyVdGynVGV5-dmmB-etFWK8bVYn_UkxVCKUtttu23EcWluVKXc-L7_Lw90Aox4LjovnMRoYXCAVWT37Cz5SEkaANCqGdEJ7cvf"/>
+<img alt="YouTube icon" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvzFN0RjjHuSHub8l4KpW8-4tn-bhlfYeN_gttQPl4H24fSeimbYf5KWm4aisbSAGtlvYXo_VavjK4tj9kPu7U4TVghnJpkJ-MTb0t9zN6Hrc2WnAGp8HOaVINsMtCmE2d3t5dGh9M281EWVn4vUyDoxRFh7rXE01kFENFOXskJUP3Nt9LIVgBKx_oyxEOPf59_JvtdeXxdTqiFeQaMayE1LORBRSnJ90t4RwFbP3m7_jM8Db0JTkRs4YLKfFmGKlniGKWa82WCE5z"/>
+<img alt="A decorative symbol" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_mBpwKx2EziRLKAI3DGQkiLfbGoNt8waDiHk9I-EVhKEiYEd5dHASkntJAYHpayCxqsBnzPU2nte9UDnIipUzXd0G1UBIsPWV4Oe3IFiGGICgXd8-TIFCiAYOy2RJr3D1-8LPtwY7_OQFkoQwhLRUMdt7HL28VLie-G9PwDx1FNlrewilCbMiwVXkwG2nNCmuzCuaePUe-wJbeJPvXfXUidcyHjHfI5uelC8qLWkd04LUKa1Zbx74ZL6BVQhy5u1ASDDoLNUvnxCA"/>
+</div>
+<div class="flex items-center space-x-2">
+<p class="text-stone-400 text-sm">Design By Machove</p>
+<p class="text-stone-400 text-sm">Powered By</p>
+<img alt="A logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHMsmw_EtM3RA1rJfHTNjooXZbcVWBCO1a6WaqEy1OeKA5eLe61EIWtliVLezdGHNx3biRlcqsEt2Nh6tHQ-kFwyDtWOhTsVqeL2-ZK5-J7rRn6l0dokIdswaUAw7PjCMzWpqQDdHFIuD6aXEkro12WDMmG4jBhIVt7LMz9gTq5np8p8syTqQyuKbxoQ2AziztxOAwEb776KxtVQN9AyDO4e7hemtRBVbo4uTfJ3ORnGvIoRkzLhfOllIW-gx7MPDsU7YIQ1OkmAIb"/>
+</div>
+</footer>
+</div>
 
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="static/css/index.css" />
-  </head>
-
-  <!--tabla cursor-->
-  <body class="pt-20 bg-white text-gray-800">
-    <div id="music-cursor">
-      <img src="/static/tabla-icon.png" alt="Music Note" class="w-8 h-8" />
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
-    >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
-        <img
-          src="static/images/logo-light.jpeg"
-          alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
-        />
-        <span class="text-2xl md:text-5xl text-[#800000] gwendolyn-bold">
-          TablaGyan
-        </span>
-      </div>
-
-      <!-- Desktop Navigation Links -->
-      <div
-        class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative"
-        style="font-family: 'Libre Baskerville', serif"
-      >
-        <a
-          href="index.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >Home</a
-        >
-
-        <div class="relative group">
-          <div class="flex flex-col">
-            <a
-              href="about.html"
-              class="text-[#3e2723] hover:text-[#b7410e] transition"
-              >TablaGyan</a
-            >
-            <div
-              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
-            >
-              <a
-                href="about.html#academy"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >TablaGyan Academy</a
-              >
-              <a
-                href="about.html#gurus"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >TablaGyan Gurus</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="relative group">
-          <div class="flex flex-col">
-            <a
-              href="tablavidya.html"
-              class="text-[#3e2723] hover:text-[#b7410e] transition"
-              >TablaVidya</a
-            >
-            <div
-              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
-            >
-              <a
-                href="tablavidya.html#tablaology"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >Tabla-ology</a
-              >
-              <a
-                href="tablavidya.html#ustaads"
-                class="block px-4 py-2 hover:bg-[#f7e3b2]"
-                >Tabla Ustaads</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <a
-          href="index.html#courses"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >Courses</a
-        >
-        <a
-          href="contact.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >Contact</a
-        >
-        <a
-          href="faq.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >FAQ</a
-        >
-      </div>
-
-      <!-- Mobile Menu Toggle (Checkbox) -->
-      <input type="checkbox" id="menu-toggle" class="hidden" />
-
-      <!-- Mobile Menu Button -->
-      <label
-        for="menu-toggle"
-        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
-      >
-        <svg
-          class="w-7 h-7"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
-      </label>
-
-      <!-- Mobile Menu Dropdown -->
-      <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50 transition-all duration-300 max-h-0 overflow-hidden"
-        id="menu-content"
-      >
-        <div
-          class="flex flex-col space-y-2 p-4 text-lg"
-          style="font-family: 'Libre Baskerville', serif"
-        >
-          <a href="index.html">Home</a>
-          <a href="about.html">TablaGyan Academy</a>
-          <a href="about.html#gurus">TablaGyan Gurus</a>
-          <a href="tablavidya.html">TablaVidya</a>
-          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
-          <a href="index.html#courses">Courses</a>
-          <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
-      <!-- Audio Element (Hidden) -->
-      <audio
-        id="background-music"
-        src="/static/audio/tabla-bg.mp3"
-        loop
-      ></audio>
-
-      <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
-        <img
-          id="music-icon"
-          src="/static/volume-up.png"
-          alt="Music Toggle"
-          class="w-8 h-8"
-        />
-      </div>
-      <!-- Hero Landing Section -->
-      <section
-        class="h-screen w-full flex items-center justify-start bg-black text-white relative overflow-hidden font-serif"
-      >
-        <!-- Gradient overlay on left -->
-        <div
-          class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent"
-        ></div>
-
-        <!-- Left-side Title & Tagline -->
-        <div
-          class="z-20 hero-content pl-6 md:pl-16 w-full max-w-full"
-          data-aos="fade-up"
-          data-aos-duration="2000"
-        >
-          <!-- Heading Rotator -->
-          <div
-            id="text-rotator"
-            class="relative h-[10rem] md:h-[12rem] w-full overflow-hidden leading-none"
-          >
-            <!-- English -->
-            <h1
-              class="gwendolyn-bold rotating-text absolute top-1/2 left-0 w-full text-7xl md:text-9xl lg:text-[10rem] text-white opacity-100 transition-opacity duration-1000 text-left transform -translate-y-1/2"
-            >
-              TablaGyan
-            </h1>
-            <!-- Hindi -->
-            <h1
-              class="rotating-text absolute top-0 left-0 w-full text-7xl md:text-9xl lg:text-[10rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-8"
-              style="font-family: 'Kalam', cursive; font-weight: 700"
-            >
-              तबलाग्यान्
-            </h1>
-            <!-- Kannada -->
-            <h1
-              class="rotating-text absolute top-0 left-0 w-full text-8xl md:text-[10rem] lg:text-[11rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-[-1rem]"
-              style="font-family: 'Hubballi', sans-serif; font-weight: 400"
-            >
-              ತಬ್ಲಾಗ್ಯಾನ್
-            </h1>
-          </div>
-
-          <!-- Subheading -->
-          <p
-            class="text-lg md:text-2xl italic text-yellow-100 mt-3 md:mt-10 tracking-wide"
-            style="margin-left: 4cm"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Express Music 🎶...Impress Life..!
-          </p>
-        </div>
-
-        <div class="relative h-screen w-full overflow-hidden">
-          <img
-            id="image1"
-            src="static/images/bg1.jpeg"
-            class="absolute inset-0 h-full w-full object-cover object-right opacity-40 transition-opacity duration-1000"
-          />
-          <img
-            id="image2"
-            src="static/images/bg2.jpeg"
-            class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
-          />
-        </div>
-
-        <script>
-          let showFirst = true;
-          setInterval(() => {
-            document.getElementById("image1").classList.toggle("opacity-0");
-            document.getElementById("image2").classList.toggle("opacity-80");
-            showFirst = !showFirst;
-          }, 7000);
-        </script>
-      </section>
-
-      <!-- About Us Section -->
-      <section
-        class="py-20 md:py-28 bg-[#fbf3e3] text-center relative overflow-hidden group cursor-pointer border-t-4 border-[#944431]"
-        onclick="window.location='about.html'"
-      >
-        <!-- Section Heading -->
-        <h2
-          class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
-          style="font-family: 'Kalam', cursive"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          About Us
-        </h2>
-
-        <!-- Flex container -->
-        <div
-          class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6 md:px-12 relative z-10"
-        >
-          <!-- Text content -->
-          <div
-            class="md:w-1/2 text-left"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          >
-            <h3
-              class="text-2xl md:text-3xl font-semibold mb-5 text-[#7a2c1e]"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              About TablaGyan
-            </h3>
-            <p
-              class="mb-4 text-[#3d261c] text-lg md:text-xl leading-relaxed tracking-wide"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              Broadly, <strong>TablaGyan</strong> is a school dedicated to
-              gratify the desires of music lovers. This website is a cautiously
-              nurtured infant of its Tabla Vidyalay at Bengaluru, India.
-            </p>
-            <p
-              class="mb-4 text-[#3d261c] text-lg md:text-xl leading-relaxed tracking-wide"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              Though the word <strong>"TablaGyan"</strong> literally means
-              <em>"Knowledge of Tabla"</em>, it figuratively facilitates:
-            </p>
-            <ul
-              class="list-disc pl-5 mt-2 text-[#3d261c] text-lg md:text-xl"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              <li>Learning and sharing music</li>
-              <li>Being part of a musically active group</li>
-              <li>
-                Allowing <em>rasikas</em> to contribute significantly to the
-                musical world
-              </li>
-            </ul>
-            <p
-              class="mb-4 text-[#3d261c] text-lg md:text-xl leading-relaxed tracking-wide"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              The school is located in the serene, green lanes of Koramangala,
-              Bengaluru — an environment that truly supports musical growth.
-            </p>
-            <p
-              class="text-[#3d261c] text-lg md:text-xl leading-relaxed tracking-wide"
-              style="font-family: 'Hubballi', sans-serif"
-            >
-              Since its inception in 2001, TablaGyan has trained more than 200
-              students across all age groups, including foreign nationals from
-              the USA, Germany, South Africa, and beyond. Many of these students
-              are now blossoming into brilliant performers.
-            </p>
-          </div>
-          <!--images-->
-          <div class="md:w-1/2 flex justify-center items-center py-12">
-            <div
-              class="relative w-[400px] flex flex-col items-center space-y-6"
-            >
-              <img
-                src="static/images/gallery/download.jpeg"
-                alt="Tabla Class 1"
-                class="w-[300px] rounded-2xl border-4 border-[#c69b58] shadow-lg transform -rotate-6"
-                data-aos="fade-up"
-                data-aos-delay="0"
-                data-aos-duration="600"
-              />
-
-              <img
-                src="static/images/gallery/tablagyan-1.jpeg"
-                alt="Tabla Class 2"
-                class="w-[300px] rounded-2xl border-4 border-[#e0b56f] shadow-lg transform rotate-3"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="600"
-              />
-
-              <img
-                src="static/images/gallery/tablagyan-2.jpeg"
-                alt="Tabla Class 3"
-                class="w-[300px] rounded-2xl border-4 border-[#a94438] shadow-2xl transform -rotate-9"
-                data-aos="fade-up"
-                data-aos-delay="600"
-                data-aos-duration="600"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Ornamental Hover Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-l from-[#944431] to-transparent opacity-0 group-hover:opacity-25 transition-opacity duration-500 z-0 pointer-events-none"
-        ></div>
-
-        <!-- Hover Arrow -->
-        <div
-          class="absolute top-1/2 right-6 transform -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 z-20"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            class="w-10 h-10 text-white group-hover:translate-x-1 transition-transform duration-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M5.25 4.5L12.75 12 5.25 19.5m6-15L19.75 12l-8.5 7.5"
-            />
-          </svg>
-        </div>
-      </section>
-
-      <!--courses offered-->
-
-      <section
-        id="courses"
-        class="py-12 md:py-20 bg-white text-center relative z-10"
-      >
-        <h2
-          class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
-          style="font-family: 'Kalam', cursive"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          Courses Offered
-        </h2>
-        <div id="overlay"></div>
-        <!-- Tabla Section -->
-        <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Tabla</h3>
-        <div
-          class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4 mb-12"
-        >
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Beginner Tabla</h4>
-            <p class="short-desc text-sm">
-              Basics of rhythm and hand practice.
-            </p>
-            <p class="click-more mt-4 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <div class="text-sm leading-relaxed space-y-4">
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Core Skills Covered:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Understanding basic rhythm cycles (Taal).</li>
-                    <li>Correct hand positioning and posture.</li>
-                    <li>
-                      Mastering fundamental bols: Na, Ta, Tin, Dha, Dhin, etc.
-                    </li>
-                    <li>Clarity and consistency in sound production.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">Focus Areas:</h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Kayda, Paltas (simple patterns).</li>
-                    <li>
-                      Practice of Teen Taal (16 beats) in slow and medium tempo.
-                    </li>
-                    <li>
-                      Basic accompaniment techniques for Bhajans and light
-                      music.
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Practice Methods:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Repetition exercises for muscle memory.</li>
-                    <li>Metronome practice for rhythm consistency.</li>
-                    <li>Introduction to practice with Tanpura / Lehra app.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Outcomes After Completion:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Ability to play structured patterns independently.</li>
-                    <li>
-                      Confidence in performing simple compositions on stage.
-                    </li>
-                    <li>
-                      Preparedness to move to Intermediate Tabla training.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Intermediate Tabla</h4>
-            <p class="short-desc text-sm">Taals, improvisation basics.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Exploring kaidas, relas, improvisation techniques, traditional
-                compositions, and accompaniments in classical settings.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Advanced Tabla</h4>
-            <p class="short-desc text-sm">
-              Stage performance & advanced taals.
-            </p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Advanced solo performance techniques, rare taals, accompaniment
-                mastery, stagecraft, and mentorship grooming.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vocals Section -->
-        <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Vocals</h3>
-        <div
-          class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4"
-        >
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Beginner Vocals</h4>
-            <p class="short-desc text-sm">Voice culture, basic ragas.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Fundamentals of swaras, sargams, basic alankars, breath control,
-                and voice training for classical vocals.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Intermediate Vocals</h4>
-            <p class="short-desc text-sm">Intermediate ragas & bandishes.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Mastering intermediate ragas, bandishes, taan patterns, breath
-                management, and classical presentation techniques.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
-          >
-            <h4 class="text-lg font-bold mb-2">Advanced Vocals</h4>
-            <p class="short-desc text-sm">Performance level training.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Advanced raga exploration, khayal gayaki, intricate taans, stage
-                presence, and guidance for professional pathways.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--photo section-->
-
-      <section class="py-16 bg-[#fef7e5]">
-        <!-- Section Title -->
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
-        >
-          Photo Gallery
-        </h2>
-
-        <!-- Main Gallery Container -->
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-          <!-- Main Image Display with black background and containment -->
-          <div
-            class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-lg border-4 border-[#c69b58] bg-black"
-          >
-            <img
-              id="mainImage"
-              src="static/images/gallery/tg1.jpeg"
-              alt="Main Gallery Image"
-              class="w-full h-full object-contain transition-all duration-500"
-            />
-
-            <!-- Left Arrow -->
-            <button
-              onclick="prevImage()"
-              class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-            >
-              &#8592;
-            </button>
-
-            <!-- Right Arrow -->
-            <button
-              onclick="nextImage()"
-              class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#a94438] text-white p-2 rounded-full shadow-lg hover:bg-[#7b1e1e]"
-            >
-              &#8594;
-            </button>
-          </div>
-
-          <!-- Thumbnails -->
-          <div class="flex flex-wrap justify-center gap-4 mt-6">
-            <img
-              src="static/images/gallery/tg1.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(0)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-2.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(1)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-3.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(2)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-4.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(3)"
-            />
-            <img
-              src="static/images/gallery/tablagyan-5.jpeg"
-              class="thumb w-20 h-16 object-cover rounded border-2 border-transparent hover:border-[#a94438] cursor-pointer"
-              onclick="setImage(4)"
-            />
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section class="py-16 bg-[#fef7e5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8 space-y-16">
-        <!-- 🎥 Recent Class Video -->
-        <div class="space-y-4">
-          <div
-            class="w-[640px] h-[360px] mx-auto rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/qrCc6Ui4ZuU?si=ia_EmHHH4F8Hclma"
-              title="TablaGyan Class Video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </div>
-
-        <section class="py-12 md:py-20 bg-white text-center">
-          <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e]">
-            Recent Shorts
-          </h2>
-
-          <div
-            class="flex flex-col md:flex-row justify-center items-center gap-8 px-4"
-          >
-            <!-- Short 1 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 1"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-
-            <!-- Short 2 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 2"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-
-            <!-- Short 3 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 3"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section class="w-full flex justify-center items-center py-20 bg-[#fffaf0]">
-      <div
-        class="max-w-5xl w-full px-12 py-14 bg-white/80 rounded-2xl shadow-xl border border-[#c69b58] relative"
-      >
-        <h2
-          class="text-4xl md:text-5xl font-bold text-center text-[#7b1e1e] mb-10 tracking-wide font-serif border-b-2 border-[#c69b58] pb-3"
-        >
-          What Our Students Say
-        </h2>
-
-        <!-- Elfsight Google Reviews -->
-        <div
-          class="elfsight-app-e0ed61c9-ca8d-4f17-acf6-ec50d1de7836"
-          data-elfsight-app-lazy
-        ></div>
-      </div>
-    </section>
-
-    <script
-      src="https://static.elfsight.com/platform/platform.js"
-      async
-    ></script>
-
-    <div class="visitor-counter">
-      <img
-        src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
-        alt="Visitor Count"
-      />
-    </div>
-
-    <!-- Footer -->
-    <footer
-      class="mt-6 md:mt-10 bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
-    >
-      <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
-        <!-- Instagram -->
-        <a
-          href="https://instagram.com/tablagyan.official"
-          target="_blank"
-          class="text-gray-600 hover:text-pink-500 transition"
-        >
-          <svg
-            class="w-5 h-5 md:w-6 md:h-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
-            />
-          </svg>
-        </a>
-
-        <!-- YouTube -->
-        <a
-          href="https://youtube.com/@tablagyanacademyofmusic"
-          target="_blank"
-          class="text-gray-600 hover:text-red-600 transition"
-        >
-          <svg
-            class="w-5 h-5 md:w-6 md:h-6"
-            viewBox="0 0 576 512"
-            fill="currentColor"
-          >
-            <path
-              d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
-            />
-          </svg>
-        </a>
-
-        <!-- Facebook -->
-        <a
-          href="https://facebook.com/tabla.gyan"
-          target="_blank"
-          class="text-gray-600 hover:text-blue-600 transition"
-        >
-          <svg
-            class="w-5 h-5 md:w-6 md:h-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
-            />
-          </svg>
-        </a>
-
-        <!-- WhatsApp -->
-        <a
-          href="https://wa.me/9845395205"
-          target="_blank"
-          class="text-gray-600 hover:text-green-500 transition"
-        >
-          <svg
-            class="w-5 h-5 md:w-6 md:h-6"
-            viewBox="0 0 448 512"
-            fill="currentColor"
-          >
-            <path
-              d="M380.9 97.1C339 55.2 283.5 32 224.8 32c-117.4 0-212.8 95.4-212.8 212.8 0 37.5 9.8 74.1 28.5 106.3L2 480l132.9-36.5c30.8 16.8 65.6 25.6 101.9 25.6h.1c117.3 0 212.8-95.4 212.8-212.8 0-58.7-23.2-114.1-65.8-156.2zM224.8 438.7c-30.5 0-60.2-8.2-86.2-23.7l-6.2-3.7-78.7 21.6 21-76.5-4-6.5c-17.7-28.8-27.1-62.1-27.1-96.4 0-100.1 81.5-181.6 181.6-181.6 48.5 0 94 18.9 128.3 53.2s53.2 79.8 53.2 128.3c0 100.1-81.5 181.7-181.6 181.7zm101.1-138.5c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.9-2.8-12.7 2.8-3.7 5.5-14.6 18.1-17.9 21.9-3.3 3.7-6.6 4.2-12.1 1.4-33.1-16.5-54.8-29.5-76.6-66.7-5.8-10 5.8-9.3 16.5-30.9 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.7-30.6-17.4-41.9-4.6-11.1-9.3-9.6-12.7-9.8-3.3-.2-7.1-.2-10.9-.2s-10.2 1.4-15.5 6.9c-5.3 5.5-20.2 19.7-20.2 48.1s20.7 55.8 23.5 59.6c2.8 3.7 40.8 62.3 99 87.4 13.8 6 24.6 9.6 33 12.3 13.9 4.4 26.5 3.8 36.5 2.3 11.1-1.7 32.8-13.4 37.4-26.3 4.6-12.8 4.6-23.8 3.3-26.3-1.3-2.5-5-3.9-10.5-6.6z"
-            />
-          </svg>
-        </a>
-      </div>
-
-      <p>© 2025 TablaGyan. All rights reserved.</p>
-    </footer>
-    <a href="https://www.flaticon.com/free-icons/tabla" title="tabla icons"
-      >Tabla icons created by Icongeek26 - Flaticon</a
-    >
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="index.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
-</html>
+</body></html>
