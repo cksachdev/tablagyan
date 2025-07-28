@@ -72,7 +72,6 @@
   font-style: normal;
 }
 
-
 .fade-in {
   opacity: 0;
   animation: fade-in 1.2s ease-out forwards;
@@ -167,11 +166,10 @@
   }
 }
 
-
 .visitor-counter {
   position: fixed;
   bottom: 20px; /* Distance from the bottom edge */
-  right: 20px;  /* Distance from the right edge */
+  right: 20px; /* Distance from the right edge */
   z-index: 1000; /* Ensure it stays above other content */
 }
 
@@ -179,7 +177,6 @@
   width: 120px; /* Adjust size as needed */
   height: auto; /* Maintain aspect ratio */
 }
-
 
 /* Hover on group elements */
 .group:hover .group-hover\:block {
@@ -211,6 +208,7 @@ html {
   z-index: 40;
 }
 
+/* Overlay transitions */
 /* Overlay transitions */
 #overlay {
   display: block;
@@ -251,7 +249,13 @@ html {
 .course-box.expanded .detailed {
   display: block;
   opacity: 1;
+  z-index: 51; /* Fix: Ensure detailed content is above overlay */
   transition: opacity 0.3s ease;
+}
+
+/* Ensure hidden class is defined correctly */
+.hidden {
+  display: none;
 }
 
 /* Slide in animations */

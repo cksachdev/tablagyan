@@ -19,140 +19,16 @@
       href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-
-    <script>
-      function triggerAboutTransition() {
-        const wrapper = document.getElementById("pageWrapper");
-        wrapper.style.transform = "translateX(-100vw)"; // use vw for full width slide
-        wrapper.style.opacity = "0";
-
-        // Delay the navigation to allow animation to complete
-        setTimeout(() => {
-          window.location.href = "about.html";
-        }, 500); // Duration must match transition duration
-      }
-
-      function handlePurposeChange(value) {
-        const enrollOptions = document.getElementById("enrollOptions");
-        const messageBox = document.getElementById("messageBox");
-
-        if (value === "enroll") {
-          enrollOptions.classList.remove("hidden");
-          messageBox.required = false;
-        } else if (value === "demo") {
-          enrollOptions.classList.add("hidden");
-          messageBox.required = false;
-        } else {
-          enrollOptions.classList.add("hidden");
-          messageBox.required = true;
-        }
-      }
-    </script>
-    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="stylesheet" href="static/css/index.css" />
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Purpose buttons
-        function selectPurpose(button, value) {
-          document.querySelectorAll(".purpose-btn").forEach((btn) => {
-            btn.classList.remove(
-              "bg-[#a94438]",
-              "text-white",
-              "border-[#7b1e1e]"
-            );
-            btn.classList.add(
-              "bg-[#fffaf0]",
-              "text-[#7b1e1e]",
-              "border-[#c69b58]"
-            );
-          });
-
-          button.classList.remove(
-            "bg-[#fffaf0]",
-            "text-[#7b1e1e]",
-            "border-[#c69b58]"
-          );
-          button.classList.add(
-            "bg-[#a94438]",
-            "text-white",
-            "border-[#7b1e1e]"
-          );
-
-          document.getElementById("purposeInput").value = value;
-
-          handlePurposeChange(value); // Your logic to show/hide course div
-        }
-
-        // Attach click handlers to purpose buttons
-        document.querySelectorAll(".purpose-btn").forEach((button) => {
-          button.addEventListener("click", () => {
-            const value = button.dataset.value;
-            selectPurpose(button, value);
-          });
-        });
-
-        // Course buttons
-        const courseButtons = document.querySelectorAll(".course-btn");
-        const hiddenContainer = document.getElementById("hiddenCourseInputs");
-
-        courseButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const value = button.dataset.value;
-
-            if (button.classList.contains("selected")) {
-              button.classList.remove("selected");
-              button.classList.remove(
-                "bg-[#a94438]",
-                "text-white",
-                "border-[#7b1e1e]"
-              );
-              button.classList.add(
-                "bg-[#fffaf0]",
-                "text-[#7b1e1e]",
-                "border-[#c69b58]"
-              );
-
-              const inputToRemove = hiddenContainer.querySelector(
-                `input[value="${value}"]`
-              );
-              if (inputToRemove) inputToRemove.remove();
-            } else {
-              button.classList.add("selected");
-              button.classList.remove(
-                "bg-[#fffaf0]",
-                "text-[#7b1e1e]",
-                "border-[#c69b58]"
-              );
-              button.classList.add(
-                "bg-[#a94438]",
-                "text-white",
-                "border-[#7b1e1e]"
-              );
-
-              const input = document.createElement("input");
-              input.type = "hidden";
-              input.name = "courses";
-              input.value = value;
-              hiddenContainer.appendChild(input);
-            }
-          });
-        });
-      });
-    </script>
   </head>
   <body class="bg-white text-gray-800">
     <!-- Navigation Bar -->
@@ -282,7 +158,6 @@
           <a href="about.html#gurus" class="hover:text-[#b7410e] py-2"
             >TablaGyan Gurus</a
           >
-
           <a href="tablavidya.html" class="hover:text-[#b7410e] py-2"
             >TablaGyan Academy</a
           >
@@ -291,7 +166,6 @@
             class="hover:text-[#b7410e] py-2"
             >TablaGyan Gurus</a
           >
-
           <a href="index.html#courses" class="hover:text-[#b7410e] py-2"
             >Courses</a
           >
@@ -309,8 +183,6 @@
       id="pageWrapper"
       class="transition-transform duration-500 ease-in-out font-sans bg-[#fdf6e3]"
     >
-
-
       <audio
         id="background-music"
         src="/static/audio/tabla-bg.mp3"
@@ -353,30 +225,30 @@
             Connect With TablaGyan
           </h2>
 
-          <!-- Your Contact Form (Exactly as you gave) -->
+          <!-- Contact Form -->
           <form
             id="contactForm"
             method="POST"
-            action="/send_mail"
+            action="https://docs.google.com/forms/u/0/d/1BBkh3MNF07vlEbCQAHaY_FKk-QvLoC0BvlQcmu11Y_s/formResponse"
             class="space-y-6"
           >
             <input
               type="text"
-              name="name"
+              name="entry.509524468"
               required
               placeholder="Your Name"
               class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
             />
             <input
               type="tel"
-              name="phone"
+              name="entry.1597249937"
               required
               placeholder="Phone Number"
               class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
             />
             <input
               type="email"
-              name="email"
+              name="entry.631368785"
               placeholder="Email (Optional)"
               class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner focus:ring-2 focus:ring-[#a94438]"
             />
@@ -387,28 +259,27 @@
               <div id="purposeToggleGroup" class="flex flex-wrap gap-4">
                 <button
                   type="button"
-                  onclick="selectPurpose(this, 'enroll')"
                   class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
-                  data-value="enroll"
+                  data-value="Enroll into Class"
                 >
                   Enroll into Class
                 </button>
                 <button
                   type="button"
-                  onclick="selectPurpose(this, 'demo')"
                   class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
+                  data-value="Demo Class"
                 >
                   Demo Class
                 </button>
                 <button
                   type="button"
-                  onclick="selectPurpose(this, 'other')"
                   class="purpose-btn bg-[#fffaf0] border-2 border-[#c69b58] text-[#7b1e1e] font-medium px-5 py-2 rounded-full shadow hover:bg-[#f5e7c8] transition duration-300"
+                  data-value="Other"
                 >
                   Other
                 </button>
               </div>
-              <input type="hidden" name="purpose" id="purposeInput" value="" />
+              <input type="hidden" name="entry.883866292" id="purposeInput" value="" />
             </div>
 
             <div id="enrollOptions" class="hidden space-y-2 mt-4 ml-2">
@@ -419,42 +290,42 @@
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Tabla - Beginner"
+                  data-value="Table-Beginner"
                 >
                   Tabla - Beginner
                 </button>
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Tabla - Intermediate"
+                  data-value="Table-Intermediate"
                 >
                   Tabla - Intermediate
                 </button>
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Tabla - Advanced"
+                  data-value="Tabla-Advanced"
                 >
                   Tabla - Advanced
                 </button>
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Vocals - Beginner"
+                  data-value="Vocals-Beginner"
                 >
                   Vocals - Beginner
                 </button>
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Vocals - Intermediate"
+                  data-value="Vocals-Intermediate"
                 >
                   Vocals - Intermediate
                 </button>
                 <button
                   type="button"
                   class="course-btn px-5 py-2 rounded-full border-2 border-[#c69b58] bg-[#fffaf0] text-[#7b1e1e] font-medium shadow hover:bg-[#f5e7c8] transition-all duration-300"
-                  data-value="Vocals - Advanced"
+                  data-value="Vocals-Advanced"
                 >
                   Vocals - Advanced
                 </button>
@@ -463,7 +334,8 @@
             </div>
 
             <textarea
-              name="message"
+              id="messageBox"
+              name="entry.775920779"
               class="w-full p-4 border border-[#c69b58] bg-white rounded-xl shadow-inner"
               rows="4"
               placeholder="Your Message (Optional)"
@@ -606,5 +478,182 @@
       AOS.init();
     </script>
     <script src="index.js"></script>
+
+         <script>
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+          const mobileMenu = document.getElementById("mobileMenu");
+          mobileMenu.classList.toggle("hidden");
+        }
+
+        // Handle page transition for about link
+        function triggerAboutTransition() {
+          const wrapper = document.getElementById("pageWrapper");
+          wrapper.style.transform = "translateX(-100vw)";
+          wrapper.style.opacity = "0";
+          setTimeout(() => {
+            window.location.href = "about.html";
+          }, 500);
+        }
+
+        // Handle Purpose selection and UI logic
+        function handlePurposeChange(value) {
+          const enrollOptions = document.getElementById("enrollOptions");
+          const messageBox = document.getElementById("messageBox");
+
+          if (value === "Enroll into Class") {
+            enrollOptions.classList.remove("hidden");
+            messageBox.required = false;
+          } else if (value === "Demo Class") {
+            enrollOptions.classList.add("hidden");
+            messageBox.required = false;
+          } else {
+            enrollOptions.classList.add("hidden");
+            messageBox.required = true;
+          }
+        }
+
+        // Handle Purpose and Course buttons
+        document.addEventListener("DOMContentLoaded", function () {
+          // Purpose buttons
+          function selectPurpose(button, value) {
+            document.querySelectorAll(".purpose-btn").forEach((btn) => {
+              btn.classList.remove(
+                "bg-[#a94438]",
+                "text-white",
+                "border-[#7b1e1e]"
+              );
+              btn.classList.add(
+                "bg-[#fffaf0]",
+                "text-[#7b1e1e]",
+                "border-[#c69b58]"
+              );
+            });
+
+            button.classList.remove(
+              "bg-[#fffaf0]",
+              "text-[#7b1e1e]",
+              "border-[#c69b58]"
+            );
+            button.classList.add(
+              "bg-[#a94438]",
+              "text-white",
+              "border-[#7b1e1e]"
+            );
+
+            document.getElementById("purposeInput").value = value;
+            handlePurposeChange(value);
+          }
+
+          // Attach click handlers to purpose buttons
+          document.querySelectorAll(".purpose-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+              const value = button.dataset.value;
+              selectPurpose(button, value);
+            });
+          });
+
+          // Course buttons
+          const courseButtons = document.querySelectorAll(".course-btn");
+          const hiddenContainer = document.getElementById("hiddenCourseInputs");
+
+          courseButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const value = button.dataset.value;
+
+              if (button.classList.contains("selected")) {
+                button.classList.remove("selected");
+                button.classList.remove(
+                  "bg-[#a94438]",
+                  "text-white",
+                  "border-[#7b1e1e]"
+                );
+                button.classList.add(
+                  "bg-[#fffaf0]",
+                  "text-[#7b1e1e]",
+                  "border-[#c69b58]"
+                );
+
+                const inputToRemove = hiddenContainer.querySelector(
+                  `input[value="${value}"]`
+                );
+                if (inputToRemove) inputToRemove.remove();
+              } else {
+                button.classList.add("selected");
+                button.classList.remove(
+                  "bg-[#fffaf0]",
+                  "text-[#7b1e1e]",
+                  "border-[#c69b58]"
+                );
+                button.classList.add(
+                  "bg-[#a94438]",
+                  "text-white",
+                  "border-[#7b1e1e]"
+                );
+
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "entry.832095546";
+                input.value = value;
+                hiddenContainer.appendChild(input);
+              }
+            });
+          });
+
+          // Form submission handler
+          document.getElementById("contactForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+
+            // Validate required fields
+            const name = formData.get("entry.509524468");
+            const phone = formData.get("entry.1597249937");
+            const purpose = formData.get("entry.883866292");
+            const message = formData.get("entry.775920779");
+
+            if (!name || !phone || !purpose) {
+              alert("Please fill out all required fields: Name, Phone Number, and Purpose.");
+              return;
+            }
+            if (purpose === "Other" && !message) {
+              alert("Please provide a message for 'Other' purpose.");
+              return;
+            }
+
+            try {
+              const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+              });
+
+              alert("Form submitted successfully!");
+              form.reset();
+              document.querySelectorAll(".purpose-btn, .course-btn").forEach(btn => {
+                btn.classList.remove(
+                  "bg-[#a94438]",
+                  "text-white",
+                  "border-[#7b1e1e]"
+                );
+                btn.classList.add(
+                  "bg-[#fffaf0]",
+                  "text-[#7b1e1e]",
+                  "border-[#c69b58]"
+                );
+                btn.classList.remove("selected");
+              });
+              document.getElementById("enrollOptions").classList.add("hidden");
+              document.getElementById("hiddenCourseInputs").innerHTML = "";
+              document.getElementById("messageBox").required = false;
+            } catch (error) {
+              console.error("Error submitting form:", error);
+              alert("An error occurred while submitting the form. Please try again.");
+            }
+          });
+        });
+      </script>
+      
   </body>
 </html>

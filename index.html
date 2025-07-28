@@ -53,16 +53,24 @@
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
     >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <img
-          src="static/images/logo-light.jpeg"
+          src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
         />
-        <span class="text-2xl md:text-5xl text-[#800000] gwendolyn-bold">
-          TablaGyan
-        </span>
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
       </div>
 
       <!-- Desktop Navigation Links -->
@@ -238,10 +246,10 @@
             </h1>
             <!-- Kannada -->
             <h1
-              class="rotating-text absolute top-0 left-0 w-full text-8xl md:text-[10rem] lg:text-[11rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-[-1rem]"
+              class="rotating-text absolute top-0 left-0 w-full text-8xl md:text-[10rem] lg:text-[10rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-[1rem]"
               style="font-family: 'Hubballi', sans-serif; font-weight: 400"
             >
-              ತಬ್ಲಾಗ್ಯಾನ್
+              ತಬಲಾಗ್ಯಾನ್
             </h1>
           </div>
 
@@ -415,10 +423,11 @@
       </section>
 
       <!--courses offered-->
-
       <section
         id="courses"
         class="py-12 md:py-20 bg-white text-center relative z-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <h2
           class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
@@ -433,6 +442,8 @@
         <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Tabla</h3>
         <div
           class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4 mb-12"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         >
           <div
             class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
@@ -542,6 +553,8 @@
         <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Vocals</h3>
         <div
           class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         >
           <div
             class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
@@ -592,8 +605,8 @@
           </div>
         </div>
       </section>
-      <!--photo section-->
 
+      <!--photo section-->
       <section class="py-16 bg-[#fef7e5]">
         <!-- Section Title -->
         <h2
@@ -664,6 +677,7 @@
       </section>
     </div>
 
+    <!--youtube-->
     <section class="py-16 bg-[#fef7e5]">
       <div class="max-w-5xl mx-auto px-4 md:px-8 space-y-16">
         <!-- 🎥 Recent Class Video -->
@@ -740,6 +754,7 @@
       </div>
     </section>
 
+    <!--reviews-->
     <section class="w-full flex justify-center items-center py-20 bg-[#fffaf0]">
       <div
         class="max-w-5xl w-full px-12 py-14 bg-white/80 rounded-2xl shadow-xl border border-[#c69b58] relative"
