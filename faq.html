@@ -64,6 +64,19 @@
     />
 <link rel="stylesheet" href="static/css/index.css" />
     <style>
+            #music-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 1000;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.1s linear;
+      }
+      #music-cursor img {
+        width: 32px;
+        height: 32px;
+      }
+
       @keyframes scroll {
         0% {
           transform: translateX(0);
@@ -151,6 +164,13 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+        // Music Cursor
+        const musicCursor = document.getElementById("music-cursor");
+        document.addEventListener("mousemove", (e) => {
+          musicCursor.style.left = `${e.clientX + 15}px`;
+          musicCursor.style.top = `${e.clientY + 25}px`;
+          musicCursor.style.opacity = 1;
+        });
 
       // Text rotation functionality
       const texts = document.querySelectorAll("#text-rotator .rotating-text");
@@ -185,9 +205,15 @@
     </script>
   </head>
 
-  <body class="pt-28 min-h-screen flex flex-col bg-white text-gray-800">
-    <!-- Navigation Bar -->
-    <!-- Include Google Fonts in your <head> -->
+  <body class="pt-36 min-h-screen flex flex-col bg-white text-gray-800">
+    <!-- Tabla Cursor -->
+    <div id="music-cursor">
+      <img
+        src="/static/tabla-icon.png"
+        alt="Music Note"
+        onerror="this.src='https://via.placeholder.com/32?text=Tabla'; console.warn('Tabla icon not found.')"
+      />
+    </div>
 
     <!-- Navigation Bar -->
     <nav

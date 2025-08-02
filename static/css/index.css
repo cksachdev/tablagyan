@@ -269,7 +269,7 @@ body {
 }
 .class-video-carousel::before,
 .class-video-carousel::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -424,8 +424,6 @@ body {
   transform: rotate(180deg);
 }
 
-
-
 @media (max-width: 768px) {
   .faq-section-toggle {
     font-size: 1.75rem;
@@ -448,4 +446,17 @@ body {
   .faq-answer {
     font-size: 0.875rem;
   }
+}
+
+#music-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.1s linear;
+}
+#music-cursor img {
+  width: 32px;
+  height: 32px;
 }

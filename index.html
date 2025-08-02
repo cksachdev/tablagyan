@@ -46,8 +46,13 @@
 
   <!--tabla cursor-->
   <body class="pt-20 bg-white text-gray-800">
+    <!-- Tabla Cursor -->
     <div id="music-cursor">
-      <img src="/static/tabla-icon.png" alt="Music Note" class="w-8 h-8" />
+      <img
+        src="/static/tabla-icon.png"
+        alt="Music Note"
+        onerror="this.src='https://via.placeholder.com/32?text=Tabla'; console.warn('Tabla icon not found.')"
+      />
     </div>
 
     <!-- Navigation Bar -->
@@ -212,81 +217,91 @@
           class="w-8 h-8"
         />
       </div>
-      <!-- Hero Landing Section -->
-      <section
-        class="h-screen w-full flex items-center justify-start bg-black text-white relative overflow-hidden font-serif"
+<!-- Hero Landing Section -->
+<section
+  class="h-screen w-full flex items-center justify-start bg-black text-white relative overflow-hidden font-serif"
+>
+  <!-- Gradient overlay on left -->
+  <div
+    class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent"
+  ></div>
+
+  <!-- Left-side Title & Tagline -->
+  <div
+    class="z-20 hero-content px-4 sm:px-6 md:pl-16 w-full max-w-full"
+    data-aos="fade-up"
+    data-aos-duration="2000"
+  >
+    <!-- Heading Rotator -->
+    <div
+      id="text-rotator"
+      class="relative h-[6rem] sm:h-[8rem] md:h-[10rem] lg:h-[12rem] w-full overflow-hidden leading-none"
+    >
+      <!-- English -->
+      <h1
+        class="gwendolyn-bold  rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-100 transition-opacity duration-1000 text-left transform -translate-y-1/2"
       >
-        <!-- Gradient overlay on left -->
-        <div
-          class="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/80 to-transparent"
-        ></div>
-
-        <!-- Left-side Title & Tagline -->
-        <div
-          class="z-20 hero-content pl-6 md:pl-16 w-full max-w-full"
-          data-aos="fade-up"
-          data-aos-duration="2000"
+        TablaGyan
+      </h1>
+      <!-- Hindi -->
+      <h1
+        class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2", style="font-family: 'Kalam', cursive;font-weight: 700"
+      
         >
-          <!-- Heading Rotator -->
-          <div
-            id="text-rotator"
-            class="relative h-[10rem] md:h-[12rem] w-full overflow-hidden leading-none"
-          >
-            <!-- English -->
-            <h1
-              class="gwendolyn-bold rotating-text absolute top-1/2 left-0 w-full text-7xl md:text-9xl lg:text-[10rem] text-white opacity-100 transition-opacity duration-1000 text-left transform -translate-y-1/2"
-            >
-              TablaGyan
-            </h1>
-            <!-- Hindi -->
-            <h1
-              class="rotating-text absolute top-0 left-0 w-full text-7xl md:text-9xl lg:text-[10rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-8"
-              style="font-family: 'Kalam', cursive; font-weight: 700"
-            >
-              तबलाग्यान्
-            </h1>
-            <!-- Kannada -->
-            <h1
-              class="rotating-text absolute top-0 left-0 w-full text-8xl md:text-[10rem] lg:text-[10rem] text-white opacity-0 transition-opacity duration-1000 text-left mt-[1rem]"
-              style="font-family: 'Hubballi', sans-serif; font-weight: 400"
-            >
-              ತಬಲಾಗ್ಯಾನ್
-            </h1>
-          </div>
+        तबलाग्यान्
+      </h1>
+      <!-- Kannada -->
+      <h1
+        class="playfair-display rotating-text absolute top-1/2 left-0 w-full text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 text-left transform -translate-y-1/2", style="font-family: 'Hubballi', sans-serif; font-weight: 400"
+      >
+        ತಬಲಾಗ್ಯಾನ್
+      </h1>
+    </div>
 
-          <!-- Subheading -->
-          <p
-            class="text-lg md:text-2xl italic text-yellow-100 mt-3 md:mt-10 tracking-wide"
-            style="margin-left: 4cm"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Express Music 🎶...Impress Life..!
-          </p>
-        </div>
+    <!-- Subheading -->
+    <p
+      class="open-sans text-base sm:text-lg md:text-xl lg:text-2xl italic text-yellow-100 mt-2 sm:mt-4 md:mt-6 lg:mt-10 tracking-wide ml-4 sm:ml-6 md:ml-8 lg:ml-16"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      Express Music 🎶...Impress Life..!
+    </p>
+  </div>
 
-        <div class="relative h-screen w-full overflow-hidden">
-          <img
-            id="image1"
-            src="static/images/bg1.jpeg"
-            class="absolute inset-0 h-full w-full object-cover object-right opacity-40 transition-opacity duration-1000"
-          />
-          <img
-            id="image2"
-            src="static/images/bg2.jpeg"
-            class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
-          />
-        </div>
+  <div class="relative h-screen w-full overflow-hidden">
+    <img
+      id="image1"
+      src="static/images/bg1.jpeg"
+      class="absolute inset-0 h-full w-full object-cover object-right opacity-40 transition-opacity duration-1000"
+    />
+    <img
+      id="image2"
+      src="static/images/bg2.jpeg"
+      class="absolute inset-0 h-full w-full object-cover object-right opacity-0 transition-opacity duration-1000"
+    />
+  </div>
 
-        <script>
-          let showFirst = true;
-          setInterval(() => {
-            document.getElementById("image1").classList.toggle("opacity-0");
-            document.getElementById("image2").classList.toggle("opacity-80");
-            showFirst = !showFirst;
-          }, 7000);
-        </script>
-      </section>
+  <script>
+    let showFirst = true;
+    setInterval(() => {
+      document.getElementById("image1").classList.toggle("opacity-0");
+      document.getElementById("image2").classList.toggle("opacity-80");
+      showFirst = !showFirst;
+    }, 7000);
+
+    // Text rotator
+    const texts = document.querySelectorAll('.rotating-text');
+    let currentIndex = 0;
+    setInterval(() => {
+      texts[currentIndex].classList.remove('opacity-100');
+      texts[currentIndex].classList.add('opacity-0');
+      currentIndex = (currentIndex + 1) % texts.length;
+      texts[currentIndex].classList.remove('opacity-0');
+      texts[currentIndex].classList.add('opacity-100');
+    }, 3000);
+  </script>
+</section>
+
 
       <!-- About Us Section -->
       <section
@@ -368,7 +383,7 @@
               class="relative w-[400px] flex flex-col items-center space-y-6"
             >
               <img
-                src="static/images/gallery/download.jpeg"
+                src="static/gallery/student1.jpg"
                 alt="Tabla Class 1"
                 class="w-[300px] rounded-2xl border-4 border-[#c69b58] shadow-lg transform -rotate-6"
                 data-aos="fade-up"
@@ -377,7 +392,7 @@
               />
 
               <img
-                src="static/images/gallery/tablagyan-1.jpeg"
+                src="static/gallery/Tabla-Sepia.jpg"
                 alt="Tabla Class 2"
                 class="w-[300px] rounded-2xl border-4 border-[#e0b56f] shadow-lg transform rotate-3"
                 data-aos="fade-up"
@@ -386,7 +401,7 @@
               />
 
               <img
-                src="static/images/gallery/tablagyan-2.jpeg"
+                src="static/gallery/student2.jpg"
                 alt="Tabla Class 3"
                 class="w-[300px] rounded-2xl border-4 border-[#a94438] shadow-2xl transform -rotate-9"
                 data-aos="fade-up"
@@ -990,6 +1005,13 @@
     <script src="index.js"></script>
     <script>
       AOS.init();
+              // Music Cursor
+        const musicCursor = document.getElementById("music-cursor");
+        document.addEventListener("mousemove", (e) => {
+          musicCursor.style.left = `${e.clientX + 15}px`;
+          musicCursor.style.top = `${e.clientY + 25}px`;
+          musicCursor.style.opacity = 1;
+        });
     </script>
   </body>
 </html>
