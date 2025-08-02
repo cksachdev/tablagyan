@@ -1,4 +1,4 @@
-/* Animations */
+/* Existing styles from your index.css */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -85,7 +85,6 @@
   transform: scale(1.1);
 }
 
-/* Smooth button animations */
 .purpose-btn,
 .course-btn {
   transition: transform 0.3s ease;
@@ -95,7 +94,6 @@
   transform: scale(1.05);
 }
 
-/* Social hover effect */
 .social-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -104,20 +102,18 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Scrolling animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 .animate-scroll {
   animation: scroll 25s linear infinite;
 }
 
-/* Mobile menu toggle */
 .mobile-menu {
   display: none;
 }
@@ -125,7 +121,6 @@
   display: block;
 }
 
-/* Responsive typography for hero */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -168,22 +163,20 @@
 
 .visitor-counter {
   position: fixed;
-  bottom: 20px; /* Distance from the bottom edge */
-  right: 20px; /* Distance from the right edge */
-  z-index: 1000; /* Ensure it stays above other content */
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .visitor-counter img {
-  width: 120px; /* Adjust size as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 120px;
+  height: auto;
 }
 
-/* Hover on group elements */
 .group:hover .group-hover\:block {
   display: block;
 }
 
-/* Music cursor */
 #music-cursor {
   position: fixed;
   pointer-events: none;
@@ -195,70 +188,27 @@
   transition: opacity 0.3s ease, transform 0.1s linear;
 }
 
-/* Scroll behavior */
 html {
   scroll-padding-top: 100px;
   scroll-behavior: smooth;
 }
 
-/* Sticky navbar */
 .sticky-nav {
   position: sticky;
   top: 0;
   z-index: 40;
 }
 
-/* Overlay transitions */
-/* Overlay transitions */
-#overlay {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 20;
-  transition: opacity 0.4s ease;
-}
-#overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Course box animation */
 .course-box {
   transition: all 0.5s ease;
   cursor: pointer;
-}
-.course-box.expanded {
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  width: 500px !important;
-  transform: translate(-50%, -50%);
-  z-index: 50;
-  background-color: #fef7e5 !important;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-.course-box.expanded .short-desc,
-.course-box.expanded .click-more {
-  display: none;
-}
-.course-box.expanded .detailed {
-  display: block;
-  opacity: 1;
-  z-index: 51; /* Fix: Ensure detailed content is above overlay */
-  transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
-/* Ensure hidden class is defined correctly */
 .hidden {
   display: none;
 }
 
-/* Slide in animations */
 @keyframes slideFadeInUp {
   from {
     opacity: 0;
@@ -282,7 +232,6 @@ html {
   animation-delay: 1s;
 }
 
-/* Mobile responsiveness for menu */
 html,
 body {
   overflow-x: hidden;
@@ -306,9 +255,197 @@ body {
   background-color: #f7e3b2;
 }
 
-/* Font */
 .hubballi-regular {
   font-family: "Hubballi", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Updated styles for Class Video Carousel */
+.class-video-carousel {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.class-video-carousel::before,
+.class-video-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 10;
+}
+.class-video-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+}
+.class-video-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+}
+.class-video-carousel .inline-flex {
+  animation: scroll 25s linear infinite;
+}
+.class-video-carousel:hover .inline-flex {
+  animation-play-state: paused;
+}
+.class-video-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.class-video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.video-overlay {
+  transition: opacity 0.3s ease;
+}
+.video-overlay span {
+  font-size: 1.25rem;
+}
+@media (max-width: 768px) {
+  .class-video-card {
+    width: 400px;
+    height: 225px;
+  }
+  .video-overlay span {
+    font-size: 1.1rem;
+  }
+  .class-video-carousel::before,
+  .class-video-carousel::after {
+    width: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .class-video-card {
+    width: 320px;
+    height: 180px;
+  }
+  .video-overlay span {
+    font-size: 1rem;
+  }
+  .class-video-carousel::before,
+  .class-video-carousel::after {
+    width: 30px;
+  }
+}
+
+/* Updated styles for Recent Shorts Section */
+.shorts-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.shorts-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.shorts-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.short-card {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 498px; /* 9:16 aspect ratio (280 * 16 / 9 ≈ 498) */
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.short-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .short-card {
+    width: 240px;
+    height: 426px; /* Maintain 9:16 aspect ratio (240 * 16 / 9 ≈ 426) */
+  }
+  .shorts-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .short-card {
+    width: 180px;
+    height: 320px; /* Maintain 9:16 aspect ratio (180 * 16 / 9 ≈ 320) */
+  }
+  .shorts-container {
+    gap: 0.75rem;
+    padding: 0 0.25rem;
+  }
+}
+
+.short-card span {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .short-card span {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .short-card span {
+    font-size: 1rem;
+  }
+}
+
+/* Styles for FAQ Accordion */
+.faq-section-toggle {
+  transition: background-color 0.3s ease;
+}
+
+.faq-section-toggle:hover {
+  background-color: #f7e3b2;
+}
+
+.faq-section-content {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-section-toggle[aria-expanded="true"] + .faq-section-content {
+  max-height: 1000px; /* Adjust based on content size */
+}
+
+.faq-section-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 768px) {
+  .faq-section-toggle {
+    font-size: 1.75rem;
+  }
+  .faq-question {
+    font-size: 1.125rem;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section-toggle {
+    font-size: 1.5rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 0.875rem;
+  }
 }

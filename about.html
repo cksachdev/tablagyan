@@ -2,15 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>TablaGyan</title>
+    <title>TablaGyan - About Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Hubballi&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+        <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
       rel="stylesheet"
@@ -19,7 +36,6 @@
       href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
@@ -34,54 +50,49 @@
       rel="stylesheet"
     />
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="static/css/index.css" />
-
-    <script>
-      function triggerAboutTransition() {
-        const wrapper = document.getElementById("pageWrapper");
-        wrapper.style.transform = "translateX(-100vw)"; // use vw for full width slide
-        wrapper.style.opacity = "0";
-
-        // Delay the navigation to allow animation to complete
-        setTimeout(() => {
-          window.location.href = "about.html";
-        }, 500); // Duration must match transition duration
-      }
-
-      document.addEventListener("click", () => {
-        if (activeBox) {
-          activeBox.classList.remove("expanded");
-          overlay.classList.remove("active");
-          activeBox = null;
-        }
-      });
-    </script>
-
     <link rel="stylesheet" href="static/css/style.css" />
+    <style>
+      #music-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 1000;
+        font-size: 20px;
+        color: #800000;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.1s linear;
+      }
+      /* Ensure section transitions and styling */
+      #pageWrapper {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+    </style>
   </head>
-  <body class="pt-20 bg-white text-gray-800">
-    <!-- Navigation Bar -->
-
-    <!-- Navigation Bar -->
-    <!-- Include Google Fonts in your <head> -->
-
+  <body class="pt-28 bg-white text-gray-800">
     <!-- Navigation Bar -->
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
     >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <img
-          src="static/images/logo-light.jpeg"
+          src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
         />
-        <span
-          class="text-2xl md:text-3xl font-bold text-[#800000]"
-          style="font-family: 'Cinzel', serif"
-        >
-          TablaGyan
-        </span>
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
       </div>
 
       <!-- Desktop Navigation Links -->
@@ -144,7 +155,7 @@
         </div>
 
         <a
-          href="index.html#courses"
+          href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
@@ -159,8 +170,15 @@
           >FAQ</a
         >
       </div>
+
+      <!-- Mobile Menu Toggle (Checkbox) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
+      <label
+        for="menu-toggle"
+        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+      >
         <svg
           class="w-7 h-7"
           fill="none"
@@ -174,43 +192,25 @@
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>
-      </button>
+      </label>
 
       <!-- Mobile Menu Dropdown -->
       <div
-        id="mobileMenu"
-        class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        id="menu-content"
       >
         <div
           class="flex flex-col space-y-2 p-4 text-lg"
           style="font-family: 'Libre Baskerville', serif"
         >
-          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
-          <a href="about.html" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Academy</a
-          >
-          <a href="about.html#gurus" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Gurus</a
-          >
-
-          <a href="tablavidya.html" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Academy</a
-          >
-          <a
-            href="tablavidya.html#tabla-ustaads"
-            class="hover:text-[#b7410e] py-2"
-            >TablaGyan Gurus</a
-          >
-
-          <a href="index.html#courses" class="hover:text-[#b7410e] py-2"
-            >Courses</a
-          >
-          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
-          <a
-            href="faq.html"
-            class="text-[#3e2723] hover:text-[#b7410e] transition"
-            >FAQ</a
-          >
+          <a href="index.html">Home</a>
+          <a href="about.html">TablaGyan Academy</a>
+          <a href="about.html#gurus">TablaGyan Gurus</a>
+          <a href="tablavidya.html">TablaVidya</a>
+          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
+          <a href="courses.html">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
@@ -222,9 +222,8 @@
         src="/static/audio/tabla-bg.mp3"
         loop
       ></audio>
-
       <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
         <img
           id="music-icon"
           src="/static/volume-up.png"
@@ -232,47 +231,46 @@
           class="w-8 h-8"
         />
       </div>
-      <!-- Main Content -->
-      <section class="py-20">
+      <!-- TablaGyan Academy Section -->
+      <section class="py-20" id="academy">
         <div
           class="container mx-auto flex flex-col md:flex-row items-center gap-12 px-6"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <!-- Text -->
           <div class="md:w-1/2 text-left">
-            <h2 class="text-3xl font-bold mb-6 fade-in">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-6 text-[#7b1e1e]"
+              style="font-family: 'Cinzel', serif"
+            >
               Preserving Tradition, Inspiring Rhythm
             </h2>
             <p
-              class="mb-4 text-gray-700 leading-relaxed fade-in"
-              style="animation-delay: 0.3s"
+              class="mb-4 text-gray-700 leading-relaxed"
+              style="font-family: 'Hubballi', sans-serif"
+              data-aos="fade-up"
+              data-aos-delay="100"
             >
-              TablaGyan is not just a school—it's a sanctuary for rhythm
-              seekers. Founded by passionate percussionists, we focus on
-              developing a deep-rooted understanding of tabla as both a solo and
-              accompanying instrument. Our approach blends discipline with
-              creative freedom, guiding students through the nuances of Indian
-              classical music.
+              TablaGyan is not just a school—it's a sanctuary for rhythm seekers. Founded by passionate percussionists, we focus on developing a deep-rooted understanding of tabla as both a solo and accompanying instrument. Our approach blends discipline with creative freedom, guiding students through the nuances of Indian classical music.
             </p>
             <p
-              class="mb-4 text-gray-700 leading-relaxed fade-in"
-              style="animation-delay: 0.6s"
+              class="mb-4 text-gray-700 leading-relaxed"
+              style="font-family: 'Hubballi', sans-serif"
+              data-aos="fade-up"
+              data-aos-delay="200"
             >
-              Whether you're an aspiring beginner or an advanced student aiming
-              to refine your technique, our customized classes, jam sessions,
-              and performance opportunities provide a holistic experience. We
-              also emphasize the cultural context of tabla — exploring its role
-              in Kathak, Bhajans, Ghazals, and even modern fusions.
+              Whether you're an aspiring beginner or an advanced student aiming to refine your technique, our customized classes, jam sessions, and performance opportunities provide a holistic experience. We also emphasize the cultural context of tabla — exploring its role in Kathak, Bhajans, Ghazals, and even modern fusions.
             </p>
             <p
-              class="text-gray-700 leading-relaxed fade-in"
-              style="animation-delay: 0.9s"
+              class="text-gray-700 leading-relaxed"
+              style="font-family: 'Hubballi', sans-serif"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
-              Join a community that values tradition, expression, and the joy of
-              shared rhythm. At TablaGyan, we don’t just play beats — we live
-              them.
+              Join a community that values tradition, expression, and the joy of shared rhythm. At TablaGyan, we don’t just play beats — we live them.
             </p>
           </div>
-
           <!-- Image -->
           <div
             class="md:w-1/2 flex justify-center"
@@ -288,104 +286,171 @@
         </div>
       </section>
 
+      <!-- TablaGyan Gurus Section -->
       <section
         id="gurus"
         class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16"
       >
         <h2
           class="text-3xl md:text-4xl font-bold mb-6 text-center text-[#7b1e1e]"
+          style="font-family: 'Cinzel', serif"
+          data-aos="fade-up"
         >
           TablaGyan Gurus
         </h2>
-
-        <div class="max-w-4xl mx-auto">
-          <h3 class="text-2xl font-semibold mb-4">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <h3
+            class="text-2xl font-semibold mb-4"
+            style="font-family: 'Libre Baskerville', serif"
+          >
             About <span class="text-[#7b1e1e]">Dilip Puranik</span>
           </h3>
-          <p class="mb-4 leading-relaxed">
-            The founder, architect, and teacher of TablaGyan –
-            <strong>Dilip Puranik</strong> has been deeply devoted to music from
-            a very young age. Having played tabla for over
-            <strong>25 years</strong>, his journey reflects dedication, passion,
-            and a strong lineage of musical heritage.
+          <p
+            class="mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            The founder, architect, and teacher of TablaGyan – <strong>Dilip Puranik</strong> has been deeply devoted to music from a very young age. Having played tabla for over <strong>25 years</strong>, his journey reflects dedication, passion, and a strong lineage of musical heritage.
           </p>
-
-          <p class="mb-4 leading-relaxed">
-            Born into a family of musicians, with his father
-            <strong>Shri Ramesh Puranik</strong> (harmonium player) and mother
-            <strong>Smt. Kasturi Puranik</strong> (natural singer), Dilip
-            Puranik grew up immersed in music. With the blessings of elders and
-            the grace of Goddess Saraswathi, he has carved a distinct identity
-            as both a performer and a teacher.
+          <p
+            class="mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            Born into a family of musicians, with his father <strong>Shri Ramesh Puranik</strong> (harmonium player) and mother <strong>Smt. Kasturi Puranik</strong> (natural singer), Dilip Puranik grew up immersed in music. With the blessings of elders and the grace of Goddess Saraswathi, he has carved a distinct identity as both a performer and a teacher.
           </p>
-
-          <h4 class="text-xl font-semibold mb-2">Gurus and Lineage</h4>
-          <ul class="list-disc list-inside mb-4 leading-relaxed">
-            <li>
-              Initial Taleem under
-              <strong>Pandit Prahlad Raj Mokashi</strong> (Dharwad) - Delhi &
-              Banaras Gharanas
-            </li>
-            <li>
-              Advanced Taleem under
-              <strong>Pandit Laxmeesh Rao</strong> (Sirsi), a Gurubandhu of
-              Ustad Zakir Hussain
-            </li>
-            <li>
-              Specialised training in Punjabi Gharana from senior disciples of
-              <strong>Ustad Alla Rakha</strong> (Abbaji, father of Ustad Zakir
-              Hussain)
-            </li>
+          <h4
+            class="text-xl font-semibold mb-2"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Gurus and Lineage
+          </h4>
+          <ul
+            class="list-disc list-inside mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            <li>Initial Taleem under <strong>Pandit Prahlad Raj Mokashi</strong> (Dharwad) - Delhi & Banaras Gharanas</li>
+            <li>Advanced Taleem under <strong>Pandit Laxmeesh Rao</strong> (Sirsi), a Gurubandhu of Ustad Zakir Hussain</li>
+            <li>Specialised training in Punjabi Gharana from senior disciples of <strong>Ustad Alla Rakha</strong> (Abbaji, father of Ustad Zakir Hussain)</li>
           </ul>
-
-          <h4 class="text-xl font-semibold mb-2">Achievements</h4>
-          <ul class="list-disc list-inside mb-4 leading-relaxed">
-            <li>
-              <strong>National Awardee - 2013</strong> for his contribution to
-              music
-            </li>
+          <h4
+            class="text-xl font-semibold mb-2"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Achievements
+          </h4>
+          <ul
+            class="list-disc list-inside mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            <li><strong>National Awardee - 2013</strong> for his contribution to music</li>
             <li>Over 2 decades of active performances and teaching</li>
           </ul>
-
-          <h4 class="text-xl font-semibold mb-2">Performance Experience</h4>
-          <ul class="list-disc list-inside mb-4 leading-relaxed">
-            <li>
-              Accompanied top vocalists and instrumentalists: flute, sitar, and
-              others
-            </li>
-            <li>
-              Versatile in accompanying
-              <strong>Classical Music, Light Music, Ghazals, Fusion</strong> and
-              more
-            </li>
+          <h4
+            class="text-xl font-semibold mb-2"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Performance Experience
+          </h4>
+          <ul
+            class="list-disc list-inside mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            <li>Accompanied top vocalists and instrumentalists: flute, sitar, and others</li>
+            <li>Versatile in accompanying <strong>Classical Music, Light Music, Ghazals, Fusion</strong> and more</li>
           </ul>
-
-          <h4 class="text-xl font-semibold mb-2">Vision Behind TablaGyan</h4>
-          <p class="mb-4 leading-relaxed">
-            TablaGyan is the realization of
-            <strong>Dilip Puranik’s dream</strong> to nurture musical talent in
-            young minds. For over a decade, he has grown this academy with care,
-            passion, and dedication. His vision is to contribute more towards
-            the art of music, fostering both tradition and innovation through
-            education.
+          <h4
+            class="text-xl font-semibold mb-2"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Vision Behind TablaGyan
+          </h4>
+          <p
+            class="mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            TablaGyan is the realization of <strong>Dilip Puranik’s dream</strong> to nurture musical talent in young minds. For over a decade, he has grown this academy with care, passion, and dedication. His vision is to contribute more towards the art of music, fostering both tradition and innovation through education.
           </p>
         </div>
       </section>
 
-      <!-- Optional CTA -->
+      <!-- TablaGyan Family Section -->
+      <section
+        id="tablgyan-family"
+        class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-6 text-center text-[#7b1e1e]"
+          style="font-family: 'Cinzel', serif"
+          data-aos="fade-up"
+        >
+          TablaGyan Family
+        </h2>
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <h3
+            class="text-2xl font-semibold mb-4"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Highlights of Being a Part of TablaGyan Family
+          </h3>
+          <ul
+            class="list-disc list-inside mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            <li>Professional tutoring from well-trained Artists / Mentors.</li>
+            <li>Music-based coaching in Tabla, Vocal & Harmonium.</li>
+            <li>Dedicated individual attention with a Music-Family concept.</li>
+            <li>Traditional Gurukul style interlaced with modern teaching techniques.</li>
+            <li>Active social-media group for concerts alerts & discussion forums.</li>
+            <li>Exposure to concerts, workshops, jam sessions, etc.</li>
+            <li>Application-oriented teaching with an emphasis on Hindustani Music.</li>
+            <li>Online Skype Coaching (one-to-one / group) available.</li>
+            <li>Certifications affiliated to Akhil Bharatiya Gandharva MahaVidyalaya Mandal, Mumbai.</li>
+          </ul>
+          <h3
+            class="text-2xl font-semibold mb-4"
+            style="font-family: 'Libre Baskerville', serif"
+          >
+            Events
+          </h3>
+          <ul
+            class="list-disc list-inside mb-4 leading-relaxed"
+            style="font-family: 'Hubballi', sans-serif"
+          >
+            <li><strong>Ghar-Baithaks:</strong> Informal House-Concerts to unleash the potential of students, also a platform that features upcoming Musicians.</li>
+            <li><strong>Gurupoornima Celebrations:</strong> An annual mega-musical extravaganza.</li>
+            <li><strong>Music Workshops:</strong> Sessions to unify the knowledge-base amongst aspirants of different genres.</li>
+            <li><strong>Sangeet-Samvaad Sabhas:</strong> Interactive demo-based Classical Music discussions.</li>
+            <li><strong>Riyaz Sessions:</strong> Planned musical workouts going live with mentors.</li>
+            <li><strong>Sangat Sessions:</strong> Guided Tabla & Vocal application-oriented sessions.</li>
+            <li><strong>Jam Sessions:</strong> Inter-disciplinary practice sessions.</li>
+            <li><strong>Music-Retreat Camps:</strong> Fun-filled getaways to refresh musical learnings.</li>
+            <li><strong>Featured performances</strong> of reputed musicians.</li>
+            <li><strong>Podcasts: "Tune-Talks"</strong> - Insightful Interviews with Students, parents, and artists.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
       <section class="py-12 bg-red-50">
         <div class="text-center max-w-3xl mx-auto px-6">
-          <h3 class="text-2xl font-bold mb-4" data-aos="fade-up">
+          <h3
+            class="text-2xl md:text-3xl font-bold mb-4"
+            style="font-family: 'Cinzel', serif"
+            data-aos="fade-up"
+          >
             Want to Learn Tabla?
           </h3>
-          <p class="mb-6 text-gray-700" data-aos="fade-up" data-aos-delay="100">
-            Whether you're just starting or looking to master the art, TablaGyan
-            welcomes students of all ages. Join us and start your rhythmic
-            journey today.
+          <p
+            class="mb-6 text-gray-700"
+            style="font-family: 'Hubballi', sans-serif"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Whether you're just starting or looking to master the art, TablaGyan welcomes students of all ages. Join us and start your rhythmic journey today.
           </p>
           <a
             href="index.html#courses"
             class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+            style="font-family: 'Libre Baskerville', serif"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -395,19 +460,17 @@
       </section>
     </div>
 
-          <div class="visitor-counter">
-        <img
-          src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
-          alt="Visitor Count"
-        />
-      </div>
-
-      
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+      <img
+        src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
+        alt="Visitor Count"
+      />
+    </div>
 
     <!-- Footer -->
-    <footer class="mt-10 bg-gray-100 text-center text-sm p-6 text-gray-600">
+    <footer class=" bg-gray-100 text-center text-sm p-6 text-gray-600">
       <div class="flex justify-center space-x-6 mb-4">
-        <!-- Instagram -->
         <a
           href="https://instagram.com/tablagyan.official"
           target="_blank"
@@ -419,8 +482,6 @@
             />
           </svg>
         </a>
-
-        <!-- YouTube -->
         <a
           href="https://youtube.com/@tablagyanacademyofmusic"
           target="_blank"
@@ -437,8 +498,6 @@
             />
           </svg>
         </a>
-
-        <!-- Facebook -->
         <a
           href="https://facebook.com/tabla.gyan"
           target="_blank"
@@ -450,8 +509,6 @@
             />
           </svg>
         </a>
-
-        <!-- WhatsApp -->
         <a
           href="https://wa.me/9845395205"
           target="_blank"
@@ -469,27 +526,30 @@
           </svg>
         </a>
       </div>
-
-      <p>© 2025 TablaGyan. All rights reserved.</p>
+      <p style="font-family: 'Hubballi', sans-serif">
+        © 2025 TablaGyan. All rights reserved.
+      </p>
     </footer>
 
-    <!--for the pointer cursor-->
+    <!-- Music Cursor -->
     <div id="music-cursor">🎵</div>
 
-    <style>
-      #music-cursor {
-        position: fixed;
-        pointer-events: none;
-        z-index: 1000;
-        font-size: 20px;
-        color: #800000;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.1s linear;
-      }
-    </style>
-
+    <!-- Scripts -->
     <script>
+      function triggerAboutTransition() {
+        const wrapper = document.getElementById("pageWrapper");
+        wrapper.style.transform = "translateX(-100vw)";
+        wrapper.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "about.html";
+        }, 500);
+      }
+
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
       const musicCursor = document.getElementById("music-cursor");
       document.addEventListener("mousemove", (e) => {
         musicCursor.style.left = e.clientX + 15 + "px";
@@ -497,8 +557,6 @@
         musicCursor.style.opacity = 1;
       });
     </script>
-
-    <!-- At the end of <body> -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();

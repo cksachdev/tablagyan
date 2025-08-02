@@ -33,6 +33,40 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
 <link rel="stylesheet" href="static/css/index.css" />
     <style>
       html {
@@ -152,7 +186,7 @@
 
     <link rel="stylesheet" href="static/css/style.css" />
   </head>
-  <body class="pt-20 bg-white text-gray-800">
+  <body class="pt-28 bg-white text-gray-800">
     <!-- Navigation Bar -->
 
     <!-- Navigation Bar -->
@@ -162,19 +196,24 @@
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
     >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <img
-          src="static/images/logo-light.jpeg"
+          src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
         />
-        <span
-          class="text-2xl md:text-3xl font-bold text-[#800000]"
-          style="font-family: 'Cinzel', serif"
-        >
-          TablaGyan
-        </span>
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
       </div>
 
       <!-- Desktop Navigation Links -->
@@ -228,7 +267,7 @@
                 >Tabla-ology</a
               >
               <a
-                href="tablavidya.html#tabla-ustaads"
+                href="tablavidya.html#ustaads"
                 class="block px-4 py-2 hover:bg-[#f7e3b2]"
                 >Tabla Ustaads</a
               >
@@ -237,7 +276,7 @@
         </div>
 
         <a
-          href="index.html#courses"
+          href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
@@ -252,8 +291,15 @@
           >FAQ</a
         >
       </div>
+
+      <!-- Mobile Menu Toggle (Checkbox) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
+      <label
+        for="menu-toggle"
+        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+      >
         <svg
           class="w-7 h-7"
           fill="none"
@@ -267,37 +313,28 @@
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>
-      </button>
+      </label>
 
       <!-- Mobile Menu Dropdown -->
       <div
-        id="mobileMenu"
-        class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        id="menu-content"
       >
         <div
           class="flex flex-col space-y-2 p-4 text-lg"
           style="font-family: 'Libre Baskerville', serif"
         >
-          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
-          <a href="about.html" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Academy</a
-          >
-          <a href="about.html#gurus" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Gurus</a
-          >
-          <a href="index.html#courses" class="hover:text-[#b7410e] py-2"
-            >Courses</a
-          >
-          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
-          <a
-            href="faq.html"
-            class="text-[#3e2723] hover:text-[#b7410e] transition"
-            >FAQ</a
-          >
+          <a href="index.html">Home</a>
+          <a href="about.html">TablaGyan Academy</a>
+          <a href="about.html#gurus">TablaGyan Gurus</a>
+          <a href="tablavidya.html">TablaVidya</a>
+          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
+          <a href="courses.html">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
-
     <!-- Page Content -->
     <div id="pageWrapper" class="transition-transform duration-500 ease-in-out">
       <audio
@@ -307,7 +344,7 @@
       ></audio>
 
       <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
         <img
           id="music-icon"
           src="/static/volume-up.png"
@@ -441,24 +478,32 @@
         </div>
       </section>
 
-      <!-- Optional CTA -->
+      <!-- CTA Section -->
       <section class="py-12 bg-red-50">
         <div class="text-center max-w-3xl mx-auto px-6">
-          <h3 class="text-2xl font-bold mb-4" data-aos="fade-up">
-            Want to Learn Tabla?
+          <h3
+            class="text-2xl md:text-3xl font-bold mb-4"
+            style="font-family: 'Cinzel', serif"
+            data-aos="fade-up"
+          >
+            Ready to Start Your Musical Journey?
           </h3>
-          <p class="mb-6 text-gray-700" data-aos="fade-up" data-aos-delay="100">
-            Whether you're just starting or looking to master the art, TablaGyan
-            welcomes students of all ages. Join us and start your rhythmic
-            journey today.
+          <p
+            class="mb-6 text-gray-700"
+            style="font-family: 'Hubballi', sans-serif"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Whether you're a beginner or an advanced musician, TablaGyan offers courses tailored to your needs. Join our community and let rhythm and melody transform your life.
           </p>
           <a
-            href="index.html#courses"
+            href="contact.html"
             class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+            style="font-family: 'Libre Baskerville', serif"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Explore Courses
+            Contact Us to Enroll
           </a>
         </div>
       </section>
@@ -473,7 +518,7 @@
 
 
     <!-- Footer -->
-    <footer class="mt-10 bg-gray-100 text-center text-sm p-6 text-gray-600">
+    <footer class=" bg-gray-100 text-center text-sm p-6 text-gray-600">
       <div class="flex justify-center space-x-6 mb-4">
         <!-- Instagram -->
         <a

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TablaGyan - Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&family=Kalam:wght@300;400;700&family=Hubballi&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/index.css" />
+    <style>
+      #music-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 1000;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.1s linear;
+      }
+      #music-cursor img {
+        width: 32px;
+        height: 32px;
+      }
+      #pageWrapper {
+        min-height: 100vh;
+        visibility: visible;
+        padding-top: 80px; /* Ensure content isn't hidden under fixed nav */
+      }
+      .course-card {
+        background-color: #fdf2d0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .course-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      #menu-content {
+        transition: max-height 0.3s ease-in-out;
+      }
+      #menu-toggle:checked ~ #menu-content {
+        max-height: 500px;
+      }
+      /* Debug style to ensure content visibility */
+      section {
+        min-height: 200px;
+      }
+    </style>
+  </head>
+  <body class="pt-14 bg-white text-gray-800">
+    <!-- Tabla Cursor -->
+    <div id="music-cursor">
+      <img
+        src="/static/tabla-icon.png"
+        alt="Music Note"
+        onerror="this.src='https://via.placeholder.com/32?text=Tabla'; console.warn('Tabla icon not found.')"
+      />
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
+    >
+      <div class="flex items-center space-x-6">
+        <img
+          src="static/images/logo-dark1.png"
+          alt="TablaGyan Logo"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+        />
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div
+        class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative"
+        style="font-family: 'Libre Baskerville', serif"
+      >
+        <a
+          href="index.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Home</a
+        >
+
+        <div class="relative group">
+          <div class="flex flex-col">
+            <a
+              href="about.html"
+              class="text-[#3e2723] hover:text-[#b7410e] transition"
+              >TablaGyan</a
+            >
+            <div
+              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
+            >
+              <a
+                href="about.html#academy"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >TablaGyan Academy</a
+              >
+              <a
+                href="about.html#gurus"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >TablaGyan Gurus</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="flex flex-col">
+            <a
+              href="tablavidya.html"
+              class="text-[#3e2723] hover:text-[#b7410e] transition"
+              >TablaVidya</a
+            >
+            <div
+              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
+            >
+              <a
+                href="tablavidya.html#tablaology"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >Tabla-ology</a
+              >
+              <a
+                href="tablavidya.html#ustaads"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >Tabla Ustaads</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="courses.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Courses</a
+        >
+        <a
+          href="contact.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >Contact</a
+        >
+        <a
+          href="faq.html"
+          class="text-[#3e2723] hover:text-[#b7410e] transition"
+          >FAQ</a
+        >
+      </div>
+
+      <!-- Mobile Menu Toggle (Checkbox) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
+      <!-- Mobile Menu Button -->
+      <label
+        for="menu-toggle"
+        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+      >
+        <svg
+          class="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </label>
+
+      <!-- Mobile Menu Dropdown -->
+      <div
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        id="menu-content"
+      >
+        <div
+          class="flex flex-col space-y-2 p-4 text-lg"
+          style="font-family: 'Libre Baskerville', serif"
+        >
+          <a href="index.html">Home</a>
+          <a href="about.html">TablaGyan Academy</a>
+          <a href="about.html#gurus">TablaGyan Gurus</a>
+          <a href="tablavidya.html">TablaVidya</a>
+          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
+          <a href="courses.html">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="pageWrapper">
+      <!-- Audio Element -->
+      <audio
+        id="background-music"
+        src="/static/audio/tabla-bg.mp3"
+        loop
+        onerror="console.warn('Audio file not found.')"
+      ></audio>
+      <!-- Music Toggle Icon -->
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
+        <img
+          id="music-icon"
+          src="/static/volume-up.png"
+          alt="Music Toggle"
+          class="w-8 h-8"
+          onerror="this.src='https://via.placeholder.com/32?text=Music'; console.warn('Music icon not found.')"
+        />
+      </div>
+
+      <!-- Courses Section -->
+      <section class="py-16 bg-[#fffaf0] text-[#3e2723] px-4 md:px-16">
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-12 text-center text-[#7b1e1e]"
+          style="font-family: 'Cinzel', serif"
+          data-aos="fade-up"
+        >
+          Our Courses
+        </h2>
+        <div class="max-w-5xl mx-auto">
+          <!-- Tabla Courses -->
+          <h3
+            class="text-2xl md:text-3xl font-semibold mb-8 text-[#800000]"
+            style="font-family: 'Libre Baskerville', serif"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Tabla Courses
+          </h3>
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <!-- Beginner Tabla -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Beginner Tabla
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                This course introduces students to the fundamentals of tabla playing. Learn the basics of rhythm, hand techniques, and foundational bols (syllables) to build a strong base in Indian percussion.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 6 months</li>
+                <li>Focus: Hand positioning, basic rhythms (e.g., Teen Taal), simple compositions</li>
+                <li>Target: Beginners with no prior experience</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+            <!-- Intermediate Tabla -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Intermediate Tabla
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                Build on your foundational skills with various taals and improvisation techniques. Enhance your ability to play complex rhythms and accompany other instruments.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 9 months</li>
+                <li>Focus: Multiple taals (e.g., Jhaptaal, Rupak), improvisation, accompaniment</li>
+                <li>Target: Students with basic tabla knowledge</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+            <!-- Advanced Tabla -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Advanced Tabla
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                Designed for seasoned players, this course focuses on stage performance, advanced taals, and intricate compositions for solo and accompaniment roles.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 12 months</li>
+                <li>Focus: Advanced taals (e.g., Ektaal, Ada Chautaal), solo performances, fusion</li>
+                <li>Target: Experienced tabla players</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+          <!-- Vocal Courses -->
+          <h3
+            class="text-2xl md:text-3xl font-semibold mb-8 text-[#800000]"
+            style="font-family: 'Libre Baskerville', serif"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Vocal Courses
+          </h3>
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <!-- Beginner Vocal -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Beginner Vocal
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                Start your vocal journey with foundational training in voice culture and basic ragas, building confidence in Hindustani classical singing.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 6 months</li>
+                <li>Focus: Voice modulation, basic ragas (e.g., Yaman, Bhupali), swara practice</li>
+                <li>Target: Beginners with no prior vocal experience</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+            <!-- Intermediate Vocal -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Intermediate Vocal
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                Deepen your vocal skills with intermediate ragas and bandishes, learning expressive singing techniques for classical and semi-classical styles.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 9 months</li>
+                <li>Focus: Intermediate ragas (e.g., Bageshri, Jaunpuri), bandishes, alap</li>
+                <li>Target: Students with basic vocal training</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+            <!-- Advanced Vocal -->
+            <div class="course-card p-6 rounded-lg shadow-md">
+              <h4
+                class="text-xl font-semibold mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Advanced Vocal
+              </h4>
+              <p
+                class="text-gray-700 mb-4 leading-relaxed"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                Prepare for professional performances with advanced vocal training, mastering complex ragas, taans, and stage presence.
+              </p>
+              <ul
+                class="list-disc list-inside mb-4 text-gray-700"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                <li>Duration: 12 months</li>
+                <li>Focus: Complex ragas (e.g., Darbari, Todi), advanced taans, performance skills</li>
+                <li>Target: Experienced vocalists</li>
+                <li>Mode: In-person or online via Skype</li>
+                <li>Certification: Affiliated with Akhil Bharatiya Gandharva MahaVidyalaya Mandal</li>
+              </ul>
+              <a
+                href="contact.html"
+                class="inline-block px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-12 bg-red-50">
+        <div class="text-center max-w-3xl mx-auto px-6">
+          <h3
+            class="text-2xl md:text-3xl font-bold mb-4"
+            style="font-family: 'Cinzel', serif"
+            data-aos="fade-up"
+          >
+            Ready to Start Your Musical Journey?
+          </h3>
+          <p
+            class="mb-6 text-gray-700"
+            style="font-family: 'Hubballi', sans-serif"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Whether you're a beginner or an advanced musician, TablaGyan offers courses tailored to your needs. Join our community and let rhythm and melody transform your life.
+          </p>
+          <a
+            href="contact.html"
+            class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+            style="font-family: 'Libre Baskerville', serif"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Contact Us to Enroll
+          </a>
+        </div>
+      </section>
+
+      <div class="visitor-counter">
+        <img
+          src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
+          alt="Visitor Count"
+        />
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
+      >
+        <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
+          <a
+            href="https://instagram.com/tablagyan.official"
+            target="_blank"
+            class="text-gray-600 hover:text-pink-500 transition"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zM12 8.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm0 1.5a2 2 0 100 4 2 2 0 000-4zm4.75-.75a.75.75 0 110 1.5.75.75 0 010-1.5zM4.5 7.75A3.25 3.25 0 017.75 4.5h8.5A3.25 3.25 0 0119.5 7.75v8.5a3.25 3.25 0 01-3.25 3.25h-8.5A3.25 3.25 0 014.5 16.25v-8.5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://youtube.com/@tablagyanacademyofmusic"
+            target="_blank"
+            class="text-gray-600 hover:text-red-600 transition"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 576 512"
+              fill="currentColor"
+            >
+              <path
+                d="M549.655 124.083c-6.281-23.65-24.774-42.181-48.2-48.483C460.018 64 288 64 288 64S115.982 64 74.545 75.6c-23.426 6.302-41.919 24.833-48.2 48.483C16 165.138 16 256 16 256s0 90.862 10.345 131.917c6.281 23.65 24.774 42.181 48.2 48.483C115.982 448 288 448 288 448s172.018 0 213.455-11.6c23.426-6.302 41.919-24.833 48.2-48.483C560 346.862 560 256 560 256s0-90.862-10.345-131.917zM232 336V176l142.857 80L232 336z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://facebook.com/tabla.gyan"
+            target="_blank"
+            class="text-gray-600 hover:text-blue-600 transition"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5.01 3.66 9.16 8.44 9.88v-6.99H8.09v-2.89h2.35v-2.2c0-2.33 1.39-3.61 3.52-3.61 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.45v1.88h2.58l-.41 2.89h-2.17v6.99C18.34 21.22 22 17.07 22 12.06z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://wa.me/9845395205"
+            target="_blank"
+            class="text-gray-600 hover:text-green-500 transition"
+          >
+            <svg
+              class="w-5 h-5 md:w-6 md:h-6"
+              viewBox="0 0 448 512"
+              fill="currentColor"
+            >
+              <path
+                d="M380.9 97.1C339 55.2 283.5 32 224.8 32c-117.4 0-212.8 95.4-212.8 212.8 0 37.5 9.8 74.1 28.5 106.3L2 480l132.9-36.5c30.8 16.8 65.6 25.6 101.9 25.6h.1c117.3 0 212.8-95.4 212.8-212.8 0-58.7-23.2-114.1-65.8-156.2zM224.8 438.7c-30.5 0-60.2-8.2-86.2-23.7l-6.2-3.7-78.7 21.6 21-76.5-4-6.5c-17.7-28.8-27.1-62.1-27.1-96.4 0-100.1 81.5-181.6 181.6-181.6 48.5 0 94 18.9 128.3 53.2s53.2 79.8 53.2 128.3c0 100.1-81.5 181.7-181.6 181.7zm101.1-138.5c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.9-2.8-12.7 2.8-3.7 5.5-14.6 18.1-17.9 21.9-3.3 3.7-6.6 4.2-12.1 1.4-33.1-16.5-54.8-29.5-76.6-66.7-5.8-10 5.8-9.3 16.5-30.9 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.7-30.6-17.4-41.9-4.6-11.1-9.3-9.6-12.7-9.8-3.3-.2-7.1-.2-10.9-.2s-10.2 1.4-15.5 6.9c-5.3 5.5-20.2 19.7-20.2 48.1s20.7 55.8 23.5 59.6c2.8 3.7 40.8 62.3 99 87.4 13.8 6 24.6 9.6 33 12.3 13.9 4.4 26.5 3.8 36.5 2.3 11.1-1.7 32.8-13.4 37.4-26.3 4.6-12.8 4.6-23.8 3.3-26.3-1.3-2.5-5-3.9-10.5-6.6z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p style="font-family: 'Hubballi', sans-serif">
+          © 2025 TablaGyan. All rights reserved.
+        </p>
+      </footer>
+
+      <!-- Scripts -->
+      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+      <script src="index.js" onerror="console.warn('index.js not found.')" defer></script>
+      <script>
+        // Initialize AOS
+        try {
+          AOS.init({
+            once: true,
+            duration: 1000,
+          });
+        } catch (e) {
+          console.warn("AOS initialization failed:", e);
+        }
+
+        // Music Cursor
+        const musicCursor = document.getElementById("music-cursor");
+        document.addEventListener("mousemove", (e) => {
+          musicCursor.style.left = `${e.clientX + 15}px`;
+          musicCursor.style.top = `${e.clientY + 25}px`;
+          musicCursor.style.opacity = 1;
+        });
+
+        // Music Toggle
+        const musicToggle = document.getElementById("music-toggle");
+        const backgroundMusic = document.getElementById("background-music");
+        const musicIcon = document.getElementById("music-icon");
+        musicToggle.addEventListener("click", () => {
+          try {
+            if (backgroundMusic.paused) {
+              backgroundMusic.play().catch((e) => console.warn("Audio playback failed:", e));
+              musicIcon.src = "/static/volume-up.png";
+            } else {
+              backgroundMusic.pause();
+              musicIcon.src = "/static/volume-off.png";
+            }
+          } catch (e) {
+            console.warn("Music toggle failed:", e);
+          }
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById("menu-toggle").addEventListener("change", () => {
+          const menuContent = document.getElementById("menu-content");
+          menuContent.style.maxHeight = document.getElementById("menu-toggle").checked
+            ? "500px"
+            : "0";
+        });
+
+        // Ensure pageWrapper is visible
+        document.getElementById("pageWrapper").style.opacity = 1;
+        document.getElementById("pageWrapper").style.transform = "none";
+      </script>
+    </div>
+  </body>
+</html>

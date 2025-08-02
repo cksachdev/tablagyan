@@ -32,6 +32,36 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
 <link rel="stylesheet" href="static/css/index.css" />
     <style>
       @keyframes scroll {
@@ -155,32 +185,37 @@
     </script>
   </head>
 
-  <body class="min-h-screen flex flex-col bg-white text-gray-800">
+  <body class="pt-28 min-h-screen flex flex-col bg-white text-gray-800">
     <!-- Navigation Bar -->
     <!-- Include Google Fonts in your <head> -->
 
     <!-- Navigation Bar -->
     <nav
-      class="bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center relative border-b-4 border-[#b7410e]"
+      class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
     >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <img
-          src="static/images/logo-light.jpeg"
+          src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
         />
-        <span
-          class="text-2xl md:text-3xl font-bold text-[#800000]"
-          style="font-family: 'Cinzel', serif"
-        >
-          TablaGyan
-        </span>
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
       </div>
 
       <!-- Desktop Navigation Links -->
       <div
-        class="hidden md:flex space-x-8 text-[1.1rem] font-medium"
+        class="hidden md:flex space-x-8 text-[1.1rem] font-medium relative"
         style="font-family: 'Libre Baskerville', serif"
       >
         <a
@@ -188,11 +223,55 @@
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Home</a
         >
-        <a
-          href="about.html"
-          class="text-[#3e2723] hover:text-[#b7410e] transition"
-          >About</a
-        >
+
+        <div class="relative group">
+          <div class="flex flex-col">
+            <a
+              href="about.html"
+              class="text-[#3e2723] hover:text-[#b7410e] transition"
+              >TablaGyan</a
+            >
+            <div
+              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
+            >
+              <a
+                href="about.html#academy"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >TablaGyan Academy</a
+              >
+              <a
+                href="about.html#gurus"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >TablaGyan Gurus</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="flex flex-col">
+            <a
+              href="tablavidya.html"
+              class="text-[#3e2723] hover:text-[#b7410e] transition"
+              >TablaVidya</a
+            >
+            <div
+              class="absolute left-0 mt-6 w-48 bg-[#fdf2d0] border border-[#d4af37] shadow-lg rounded hidden group-hover:block"
+            >
+              <a
+                href="tablavidya.html#tablaology"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >Tabla-ology</a
+              >
+              <a
+                href="tablavidya.html#ustaads"
+                class="block px-4 py-2 hover:bg-[#f7e3b2]"
+                >Tabla Ustaads</a
+              >
+            </div>
+          </div>
+        </div>
+
         <a
           href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
@@ -210,8 +289,14 @@
         >
       </div>
 
+      <!-- Mobile Menu Toggle (Checkbox) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
       <!-- Mobile Menu Button -->
-      <button id="menuButton" class="md:hidden p-2 text-[#3e2723]">
+      <label
+        for="menu-toggle"
+        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+      >
         <svg
           class="w-7 h-7"
           fill="none"
@@ -225,26 +310,25 @@
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>
-      </button>
+      </label>
 
       <!-- Mobile Menu Dropdown -->
       <div
-        id="mobileMenu"
-        class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        id="menu-content"
       >
         <div
           class="flex flex-col space-y-2 p-4 text-lg"
           style="font-family: 'Libre Baskerville', serif"
         >
-          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
-          <a href="about.html" class="hover:text-[#b7410e] py-2">About</a>
-          <a href="courses.html" class="hover:text-[#b7410e] py-2">Courses</a>
-          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
-          <a
-            href="faq.html"
-            class="text-[#3e2723] hover:text-[#b7410e] transition"
-            >FAQ</a
-          >
+          <a href="index.html">Home</a>
+          <a href="about.html">TablaGyan Academy</a>
+          <a href="about.html#gurus">TablaGyan Gurus</a>
+          <a href="tablavidya.html">TablaVidya</a>
+          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
+          <a href="courses.html">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
@@ -258,7 +342,7 @@
       ></audio>
 
       <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
         <img
           id="music-icon"
           src="/static/volume-up.png"
@@ -272,63 +356,314 @@
         </h1>
       </header>
 
-      <main class="flex-grow container mx-auto py-12 px-6">
-        <div class="max-w-4xl mx-auto space-y-8">
-          <div>
-            <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2">
-              1. Can beginners join TablaGyan?
-            </h2>
-            <p class="faq-answer text-[#4b2e2e]">
-              Yes! We offer classes for absolute beginners, intermediate, and
-              advanced learners.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2">
-              2. Are online classes available?
-            </h2>
-            <p class="faq-answer text-[#4b2e2e]">
-              Yes, we conduct both offline and online sessions for students
-              across the globe.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2">
-              3. Do you teach anything apart from Tabla?
-            </h2>
-            <p class="faq-answer text-[#4b2e2e]">
-              Yes, we also offer vocal music classes for beginners to advanced
-              levels.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2">
-              4. How do I enroll?
-            </h2>
-            <p class="faq-answer text-[#4b2e2e]">
-              Visit our
-              <a href="contact.html" class="text-[#b7410e] hover:underline"
-                >Contact</a
-              >
-              page and fill out the form to get started. We'll guide you through
-              the process.
-            </p>
-          </div>
-
-          <div>
-            <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2">
-              5. What is the fee structure?
-            </h2>
-            <p class="faq-answer text-[#4b2e2e]">
-              Fees depend on the level and frequency of classes. Please contact
-              us for detailed information.
-            </p>
-          </div>
+<main class="flex-grow container mx-auto py-12 px-6">
+  <div class="max-w-4xl mx-auto space-y-8">
+    <!-- General Information -->
+    <div class="faq-section">
+      <button class="faq-section-toggle text-2xl md:text-3xl font-bold text-[#7b1e1e] playfair-display w-full text-left py-2 flex justify-between items-center " style="font-family: 'Cinzel', serif" aria-expanded="false">
+        <span>General Information</span>
+        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="#7b1e1e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="faq-section-content hidden space-y-6">
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            1. Who can join Tabla classes?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Anyone with an interest in Indian rhythm can join! We welcome children (5+ years), teens, adults, men/women & senior citizens too– no age limit to learn music….!
+          </p>
         </div>
-      </main>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            2. Do I need any prior experience or musical background to enroll?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Not at all…! Absolute beginners are most welcome. It is always good to start from scratch. We offer classes for Beginners, Intermediate, and Advanced levels.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            3. I’m not from Bangalore, India. Can I still learn?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Yes! Our online platform connects students worldwide. At any given point of time, 30% of our students are learning from outside India. TablaGyan has trained over 1000 students globally, including the USA, UK, Japan, Dubai, Australia etc.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            4. I have a disability. Can I learn Music?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            You should definitely be learning Music unless you have concerns with your hearing, sitting and playing adequates.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            5. Do I need to buy a set of Tabla before I enrol for the classes?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            No, it’s not necessary to buy a Tabla set before enrolling. A Tabla will be provided for you to use during your class sessions. However, we recommend speaking with your teacher first. At TablaGyan, we will mentor and guide you in choosing the right quality set based on your needs and level. It’s perfectly fine to arrange for your own instrument within the first month of starting your classes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Class Structure & Scheduling -->
+    <div class="faq-section">
+      <button style="font-family: 'Cinzel', serif" class="faq-section-toggle text-2xl md:text-3xl font-bold text-[#7b1e1e] playfair-display w-full text-left py-2 flex justify-between items-center" aria-expanded="false">
+        <span>Class Structure & Scheduling</span>
+        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="#7b1e1e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="faq-section-content hidden space-y-6">
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            6. How long is each class?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            An Offline group class at the institute is typically 60 minutes long. A One-on-One online/offline class would span about 30 minutes.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            7. What is the frequency & schedule of the classes?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Group Offline classes at the academy would be on weekends, around 6 sessions (1 hr long) a month. Online classes would be flexible and mutually agreed. However, if you have preferences, do shoot a query to us. Maybe, we can work out a customized schedule/frequency for you…!
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            8. Can I choose my own time slot?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            NO...for Group Offline classes, because your batch will be decided based on vacant slot availability. YES…for Online classes, we offer flexible timings due to different time zones.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            9. How big is each batch?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            For Group Offline classes, each batch consists of just 5–6 musically curious minds, ensuring personalized attention and a collaborative learning atmosphere.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            10. What if I miss some of my classes. Do I get catch-up ones?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            At TablaGyan, the curriculum and structure being fixed, it is very difficult to schedule extra sessions to catch-up. However, you can extend some of your batches by 20-30 mins each session to make up.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            11. How are the batches spread out?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            TablaGyan focusses on “Play the Music, not the instrument” principle. Every batch is a nice, thoughtful blend of Beginner & Intermediate students, Kids & Adults alike. Do not be surprised if you find a Kid - Tabla Pro, and an Adult - crawling BABY steps…both in the same batch...!! That’s the magic of individual growth in a group setting. At TablaGyan, we believe learning has no age or level barriers.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Class Modes: Online & Offline Classes -->
+    <div class="faq-section">
+      <button style="font-family: 'Cinzel', serif" class="faq-section-toggle text-2xl md:text-3xl font-bold text-[#7b1e1e] playfair-display w-full text-left py-2 flex justify-between items-center" aria-expanded="false">
+        <span>Class Modes: Online & Offline Classes</span>
+        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="#7b1e1e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="faq-section-content hidden space-y-6">
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            12. Are Tabla classes available online?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Absolutely! We offer LIVE one-on-one and group Tabla classes via Zoom, bringing the joy of Indian rhythm to you. Each session is interactive, personalized, and conducted in real time, ensuring direct guidance, rhythmic correction, and a true classroom feel — virtually!
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            13. What do I need to bring to every OFFLINE Tabla class that I attend?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Your own complete self…! and a Practical Notes book designated for the class. At TablaGyan, students are gently encouraged to leave behind their worries, stress, and daily distractions when they enter the serene ambience of the class. Music is not just a skill — it’s a therapy, a meditation, and a joyful escape. Whether you are striking your first "Na" or composing a complex Tihai, every moment spent with the Tabla is a moment spent with & within yourself.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            14. What do I need to be ready with for the ONLINE Tabla class that I attend?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            <ul class="list-disc pl-5">
+              <li>A good Tabla set</li>
+              <li>Stable internet connection</li>
+              <li>Good AV Device with a camera (phone, tablet, or computer)</li>
+              <li>Quiet space for practice</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Material & Curriculum -->
+    <div class="faq-section">
+      <button style="font-family: 'Cinzel', serif" class="faq-section-toggle text-2xl md:text-3xl font-bold text-[#7b1e1e] playfair-display w-full text-left py-2 flex justify-between items-center" aria-expanded="false">
+        <span>Learning Material & Curriculum</span>
+        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="#7b1e1e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="faq-section-content hidden space-y-6">
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            15. What will I learn as a Beginner / Intermediate / Advanced Student in Tabla?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            This is already covered in the <a href="courses.html" class="text-[#b7410e] hover:underline">Courses</a> page of this website. Click to know more.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            16. Will I receive any study material?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            Yes! As soon as you enrol for the classes, you will receive a tailor-made “TablaGyan Kosh” textbook — a rich, comprehensive guide curated specifically for your level. It contains exhaustive information about the course you are set to accomplish, including theory, compositions, practice exercises, and tips from real performance experience. In addition, all students receive:
+            <ul class="list-disc pl-5">
+              <li>In-class notes</li>
+              <li>Practice recordings for revision</li>
+              <li>Access to our exclusive TablaGyan YouTube Channel, Podcasts featuring:
+                <ul class="list-circle pl-5">
+                  <li>Educational tutorials</li>
+                  <li>Concert and student performances</li>
+                  <li>Revision-friendly videos for home practice</li>
+                  <li>Student / Artist learning journeys and experience</li>
+                </ul>
+              </li>
+            </ul>
+            📚 Whether you are learning your first “Dha” or polishing a complex “Tihai”, the TablaGyan Kosh and our digital resources ensure you are supported every step of the way.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            17. Do you offer certifications?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            TablaGyan is proudly affiliated with the prestigious <a href="http://abgmvm.org" class="text-[#b7410e] hover:underline">Akhil Bharatiya Gandharva Mahavidyalaya Mandal, Mumbai</a> — one of India’s most respected institutions for classical music and arts across the world. Students have the opportunity to appear for annual certification exams conducted through this board. These exams are held under the guidance of certified and experienced instructors, and successful candidates are awarded nationally recognized certificates in Tabla.
+            <ul class="list-disc pl-5">
+              <li>Certification Levels: From Prarambhik (beginner) to Sangeet Visharad (advanced)</li>
+              <li>Co-ordination, Guidance & Exam Preparation provided as part of regular classes</li>
+            </ul>
+            In addition to academic certification: TablaGyan also provides strong letters of recommendation and portfolio support in the field of Music and Theatre for students applying to top global universities, helping them pursue higher studies or arts-based careers.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            18. How is the learning progress tracked?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            At TablaGyan, every session is a learning opportunity — not a test. We don’t believe in rigid evaluations or pressure-driven exams. Instead, music is deeply infused into each student’s being, in a way that inspires rather than instructs, and pulls rather than pushes. “We don’t test the student. We let the music test itself within the student.”
+            <ul class="list-disc pl-5">
+              <li>Regular reviews, guided practice lessons, and personalized feedback are part of the journey</li>
+              <li>A structured yet fluid learning process and methodology ensures students learn with depth and clarity</li>
+              <li>In-house Music Baithaks and Stage performances provide real-world experience, followed by critical one-on-one feedback by the teacher to the student</li>
+            </ul>
+            These performances often act as a game-changer in the student’s musical evolution — transforming them from learners to artists, and from practice players to performers. Learning at TablaGyan is not about passing an exam. It's about passing a milestone — within yourself. 🎶
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            19. What will be my learning journey like at TablaGyan?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            At TablaGyan, we believe in a sincere, structured, and immersive approach to learning the art of Tabla. Every musically curious soul who joins our academy is welcomed into a journey that is not only enriching but also deeply transformational. In the long run, TablaGyan believes in “Play the Music, Not the Instrument.!”, because we focus on nurturing musicality beyond just the technique. We believe that learning without application is incomplete. That’s why our academy follows the unique L.E.A.P. methodology – Learn, Enjoy, Apply, and Perform – a holistic approach that shapes students into confident and expressive artists. Along this journey, we emphasize the 3Ds essential to mastering any art form – Discipline, Dedication, and Determination – and ensure these values are deeply ingrained in every learner.
+            <br><strong>Phases of the Journey</strong>
+            <ul class="list-disc pl-5">
+              <li>Beginner to Intermediate: Within just 4–5 months, a beginner starts to bloom into an intermediate-level student.</li>
+              <li>Beyond Basics: As students grow, they are exposed to various TablaGyan initiatives that offer real-world exposure, stage experience, and a vibrant learning environment:</li>
+            </ul>
+            <br><strong>Opportunities & Platforms</strong>
+            <ul class="list-disc pl-5">
+              <li>Ghar-Baithaks – Intimate house concerts showcasing student talent & feature emerging artists.</li>
+              <li>GuruVandana Celebrations – Our grand annual musical tribute & celebration of learning.</li>
+              <li>Music Workshops – Genre-crossing sessions to expand and unify musical knowledge.</li>
+              <li>Sangeet-Samvaad Sabhas – Insightful, interactive discussions on Indian Classical Music.</li>
+              <li>Riyaz Sessions – Structured, mentor-led practice sessions to build stamina and clarity.</li>
+              <li>Sangat Sessions – Practical application-focused sessions involving Tabla & Vocal.</li>
+              <li>Jam Sessions – Cross-disciplinary group practices for creativity and collaboration.</li>
+              <li>Music Retreat Camps – Refreshing getaways combining fun and immersive learning.</li>
+              <li>Featured Performances – Exposure to concerts by eminent musicians.</li>
+              <li>Tune-Talks – A unique podcast series with interviews of students, parents, and artists.</li>
+            </ul>
+            <br><strong>Academic Pathways</strong>
+            <p>In addition to experiential learning, students at TablaGyan are provided opportunities to pursue formal certifications — Diploma, Degree, and Post-Graduation in Music, thanks to our academic association with the internationally recognized Akhil Bharatiya Gandharva Mahavidyalaya Mandal.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fees & Demo Classes -->
+    <div class="faq-section">
+      <button style="font-family: 'Cinzel', serif" class="faq-section-toggle text-2xl md:text-3xl font-bold text-[#7b1e1e] playfair-display w-full text-left py-2 flex justify-between items-center" aria-expanded="false">
+        <span>Fees & Demo Classes</span>
+        <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="#7b1e1e" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="faq-section-content hidden space-y-6">
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            20. What is the fee structure?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            To begin your journey with TablaGyan, there is a one-time registration fee required to officially enrol and associate with us. The monthly class fee varies depending on the following factors:
+            <ul class="list-disc pl-5">
+              <li>Class Type – Individual or Group</li>
+              <li>Mode of Learning – Online or Offline</li>
+              <li>Level – Beginner, Intermediate, or Advanced</li>
+            </ul>
+            We ensure that the fee structure is fair, flexible, and aligned with the depth of training we offer.
+          </p>
+        </div>
+        <div>
+          <h2 class="faq-question text-xl text-[#7b1e1e] font-bold mb-2 playfair-display">
+            21. Is there a Trial/Demo class available?
+          </h2>
+          <p class="faq-answer text-[#4b2e2e] open-sans">
+            We believe that music speaks for itself. Most students join us after exploring our website, student testimonials, and word-of-mouth recommendations. However, if you're curious to get a feel for the rhythm and our teaching style — yes, a demo class can be arranged!
+            <ul class="list-disc pl-5">
+              <li>🎧 1 trial/DEMO session can be offered to novice students</li>
+              <li>This is a chargeable session, and will walk you through the real in-class experience.</li>
+              <li>Please contact us to schedule your demo class</li>
+            </ul>
+            Try it, feel it, and then decide if the rhythm calls to you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.faq-section-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isOpen);
+        content.classList.toggle('hidden');
+        const svg = toggle.querySelector('svg');
+        svg.classList.toggle('rotate-180');
+      });
+    });
+  });
+</script>
 
       <div class="visitor-counter">
         <img

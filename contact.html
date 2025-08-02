@@ -27,7 +27,40 @@
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hubballi&family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Hubballi&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="static/css/index.css" />
   </head>
   <body class="bg-white text-gray-800">
@@ -35,19 +68,24 @@
     <nav
       class="fixed top-0 left-0 w-full z-50 bg-[#fdf2d0] shadow-md px-6 py-4 flex justify-between items-center border-b-4 border-[#b7410e]"
     >
-      <!-- Logo + Brand Name -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <img
-          src="static/images/logo-light.jpeg"
+          src="static/images/logo-dark1.png"
           alt="TablaGyan Logo"
-          class="w-14 h-14 md:w-16 md:h-16 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
+          class="w-20 h-20 md:w-28 md:h-28 object-cover rounded-full border-2 border-[#d4af37] shadow-md"
         />
-        <span
-          class="text-2xl md:text-3xl font-bold text-[#800000]"
-          style="font-family: 'Cinzel', serif"
-        >
-          TablaGyan
-        </span>
+        <div class="flex flex-col">
+          <span
+            class="text-4xl md:text-5xl text-[#800000] gwendolyn-bold leading-none"
+          >
+            TablaGyan
+          </span>
+          <span
+            class="text-xs md:text-sm text-[#855e42] italic font-serif tracking-wider mt-1 ml-6"
+          >
+            Academy of Music
+          </span>
+        </div>
       </div>
 
       <!-- Desktop Navigation Links -->
@@ -110,7 +148,7 @@
         </div>
 
         <a
-          href="index.html#courses"
+          href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
@@ -125,8 +163,15 @@
           >FAQ</a
         >
       </div>
+
+      <!-- Mobile Menu Toggle (Checkbox) -->
+      <input type="checkbox" id="menu-toggle" class="hidden" />
+
       <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2 text-[#3e2723]" onclick="toggleMobileMenu()">
+      <label
+        for="menu-toggle"
+        class="md:hidden p-2 text-[#3e2723] cursor-pointer"
+      >
         <svg
           class="w-7 h-7"
           fill="none"
@@ -140,41 +185,25 @@
             d="M4 6h16M4 12h16M4 18h16"
           ></path>
         </svg>
-      </button>
+      </label>
 
       <!-- Mobile Menu Dropdown -->
       <div
-        id="mobileMenu"
-        class="hidden absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        id="menu-content"
       >
         <div
           class="flex flex-col space-y-2 p-4 text-lg"
           style="font-family: 'Libre Baskerville', serif"
         >
-          <a href="index.html" class="hover:text-[#b7410e] py-2">Home</a>
-          <a href="about.html" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Academy</a
-          >
-          <a href="about.html#gurus" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Gurus</a
-          >
-          <a href="tablavidya.html" class="hover:text-[#b7410e] py-2"
-            >TablaGyan Academy</a
-          >
-          <a
-            href="tablavidya.html#tabla-ustaads"
-            class="hover:text-[#b7410e] py-2"
-            >TablaGyan Gurus</a
-          >
-          <a href="index.html#courses" class="hover:text-[#b7410e] py-2"
-            >Courses</a
-          >
-          <a href="contact.html" class="hover:text-[#b7410e] py-2">Contact</a>
-          <a
-            href="faq.html"
-            class="text-[#3e2723] hover:text-[#b7410e] transition"
-            >FAQ</a
-          >
+          <a href="index.html">Home</a>
+          <a href="about.html">TablaGyan Academy</a>
+          <a href="about.html#gurus">TablaGyan Gurus</a>
+          <a href="tablavidya.html">TablaVidya</a>
+          <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
+          <a href="courses.html">Courses</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </nav>
@@ -190,7 +219,7 @@
       ></audio>
 
       <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
         <img
           id="music-icon"
           src="/static/volume-up.png"
@@ -279,7 +308,12 @@
                   Other
                 </button>
               </div>
-              <input type="hidden" name="entry.883866292" id="purposeInput" value="" />
+              <input
+                type="hidden"
+                name="entry.883866292"
+                id="purposeInput"
+                value=""
+              />
             </div>
 
             <div id="enrollOptions" class="hidden space-y-2 mt-4 ml-2">
@@ -352,57 +386,196 @@
         </div>
       </section>
 
-      <!-- Social Media Icons Row -->
-      <section class="w-full bg-[#fcf0dc] py-10 flex justify-center gap-10">
-        <div
-          class="p-4 bg-white border-l-[8px] border-[#e55e45] shadow-md rounded-xl text-center w-48 hover:scale-105 transition"
-        >
-          <p class="font-semibold text-[#4b2e2e]">Instagram</p>
-          <p>@tabla_gyan</p>
-        </div>
-        <div
-          class="p-4 bg-white border-l-[8px] border-[#c4302b] shadow-md rounded-xl text-center w-48 hover:scale-105 transition"
-        >
-          <p class="font-semibold text-[#4b2e2e]">YouTube</p>
-          <p>TablaGyan Channel</p>
-        </div>
-        <div
-          class="p-4 bg-white border-l-[8px] border-[#3b5998] shadow-md rounded-xl text-center w-48 hover:scale-105 transition"
-        >
-          <p class="font-semibold text-[#4b2e2e]">Facebook</p>
-          <p>TablaGyan Academy</p>
-        </div>
-        <div
-          class="p-4 bg-white border-l-[8px] border-[#25d366] shadow-md rounded-xl text-center w-48 hover:scale-105 transition"
-        >
-          <p class="font-semibold text-[#4b2e2e]">WhatsApp</p>
-          <p>+91-XXXX-XXXXXX</p>
+      <!-- Social Media Icons Row (Unchanged) -->
+      <section
+        class="w-full bg-[#fcf0dc] py-12 md:py-16"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="container mx-auto px-4 md:px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-[#7b1e1e] text-center mb-10 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max mx-auto"
+            style="font-family: 'Cinzel', serif"
+          >
+            Connect With Us
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center"
+          >
+            <a
+              href="https://www.instagram.com/tablagyan.official"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white border-l-[8px] border-[#e55e45] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <svg
+                class="w-10 h-10 mx-auto mb-3 text-[#e55e45] group-hover:text-[#c13584] transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.227-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 3.95.216 2.056 1.717 1.911 4.821.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.144 3.102 1.645 4.996 4.749 5.141 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c3.104-.145 4.996-1.639 5.141-4.749.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.145-3.104-1.639-4.996-4.749-5.141-1.28-.058-1.689-.072-4.948-.072z"
+                />
+                <path
+                  d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8z"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" />
+              </svg>
+              <p
+                class="font-semibold text-[#4b2e2e] text-lg"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Instagram
+              </p>
+              <p class="text-[#4b2e2e]">@tabla_gyan</p>
+            </a>
+            <a
+              href="https://youtube.com/@tablagyanacademyofmusic"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white border-l-[8px] border-[#c4302b] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <svg
+                class="w-10 h-10 mx-auto mb-3 text-[#c4302b] group-hover:text-[#ff0000] transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.43.029 5.804 0 12c-.029 6.185.458 8.566 4.385 8.816 3.599.245 11.626.245 15.23 0C23.511 20.57 23.971 18.196 24 12c.029-6.185-.458-8.566-4.385-8.816zm-10.615 12.816v-7.632l6 3.816-6 3.816z"
+                />
+              </svg>
+              <p
+                class="font-semibold text-[#4b2e2e] text-lg"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                YouTube
+              </p>
+              <p class="text-[#4b2e2e]">TablaGyan Channel</p>
+            </a>
+            <a
+              href="https://www.facebook.com/tabla.gyan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white border-l-[8px] border-[#3b5998] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <svg
+                class="w-10 h-10 mx-auto mb-3 text-[#3b5998] group-hover:text-[#1877f2] transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.989 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.297c0-3.008 1.792-4.669 4.532-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.514c-1.491 0-1.956.925-1.956 1.874v2.311h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.989 24 12 24 5.373 18.627 0 12 0z"
+                />
+              </svg>
+              <p
+                class="font-semibold text-[#4b2e2e] text-lg"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                Facebook
+              </p>
+              <p class="text-[#4b2e2e]">TablaGyan Academy</p>
+            </a>
+            <a
+              href="https://wa.me/+919845395205"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white border-l-[8px] border-[#25d366] shadow-lg rounded-xl p-6 text-center w-full max-w-[220px] hover:scale-105 transition-transform duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <svg
+                class="w-10 h-10 mx-auto mb-3 text-[#25d366] group-hover:text-[#128c7e] transition-colors"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.134 1.527 5.873L0 24l6.305-1.653A11.842 11.842 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.257 17.076c-.277.777-.853 1.399-1.672 1.781-.747.348-1.727.524-2.769.308-1.105-.229-2.104-.757-3.505-1.999-2.933-2.598-4.803-5.792-5.3-6.379-.496-.586-.762-1.278-.762-2.015 0-.745.392-1.114.697-1.441.305-.326.678-.496 1.121-.496.136 0 .272.013.408.04.408.081.932.349 1.067.664.136.315.305.787.441 1.102.163.378.299.805.095 1.183-.204.378-.612.805-1.067 1.183-.068.054-.136.108-.204.175.408 1.532 1.61 2.769 2.933 3.505.408.229.884.434 1.359.612.408.149.884.068 1.223-.108.34-.176.612-.405.884-.663.272-.258.544-.54.816-.54.272 0 .476.108.612.297.136.189.612.932.816 1.262.204.33.272.663.204.932z"
+                />
+              </svg>
+              <p
+                class="font-semibold text-[#4b2e2e] text-lg"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                WhatsApp
+              </p>
+              <p class="text-[#4b2e2e]">+91-XXXX-XXXXXX</p>
+            </a>
+          </div>
         </div>
       </section>
 
       <!-- Google Map -->
-      <section class="w-full h-[400px] md:h-[500px]">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6135394531307!2d77.63047277588694!3d12.932542115731746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1467a995ae8f%3A0x4e10bbb8b4817c5e!2sTablaGyan%20Academy%20of%20Music!5e0!3m2!1sen!2sin!4v1752849095899!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <section
+        class="w-full bg-[#fcf0dc] py-12 md:py-16"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <div class="container mx-auto px-4 md:px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-[#7b1e1e] text-center mb-8 tracking-widest border-b-4 border-[#c69b58] pb-2 w-max mx-auto"
+            style="font-family: 'Cinzel', serif"
+          >
+            Find Us
+          </h2>
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <!-- Map Container -->
+            <div
+              class="w-full md:w-2/3 h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg border-2 border-[#c69b58]"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6135394531307!2d77.63047277588694!3d12.932542115731746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1467a995ae8f%3A0x4e10bbb8b4817c5e!2sTablaGyan%20Academy%20of%20Music!5e0!3m2!1sen!2sin!4v1752849095899!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="TablaGyan Academy Location"
+              ></iframe>
+            </div>
+            <!-- Address and CTA -->
+            <div class="w-full md:w-1/3 flex flex-col justify-center">
+              <h3
+                class="text-xl font-semibold text-[#4b2e2e] mb-4"
+                style="font-family: 'Libre Baskerville', serif"
+              >
+                TablaGyan Academy of Music
+              </h3>
+              <p
+                class="text-[#4b2e2e] mb-4"
+                style="font-family: 'Hubballi', sans-serif"
+              >
+                1234 Music Lane, Bengaluru, Karnataka 560034, India
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=12.932542,77.630473"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-[#a94438] hover:bg-[#7b1e1e] text-white text-lg font-bold px-6 py-3 rounded-xl shadow-xl transition duration-300 border-2 border-[#c69b58] text-center"
+              >
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
 
-          <div class="visitor-counter">
-        <img
-          src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
-          alt="Visitor Count"
-        />
-      </div>
+    <div class="visitor-counter">
+      <img
+        src="https://hits.sh/cksachdev.github.io/tablagyan.svg?style=flat-square&label=Site%20Visitors&color=e1c699&labelColor=6e2e1a"
+        alt="Visitor Count"
+      />
+    </div>
 
     <!-- Footer -->
-    <footer class="mt-10 bg-gray-100 text-center text-sm p-6 text-gray-600">
+    <footer class="bg-gray-100 text-center text-sm p-6 text-gray-600">
       <div class="flex justify-center space-x-6 mb-4">
         <!-- Instagram -->
         <a
@@ -467,8 +640,6 @@
         </a>
       </div>
 
-
-
       <p>© 2025 TablaGyan. All rights reserved.</p>
     </footer>
 
@@ -479,129 +650,131 @@
     </script>
     <script src="index.js"></script>
 
-         <script>
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-          const mobileMenu = document.getElementById("mobileMenu");
-          mobileMenu.classList.toggle("hidden");
+    <script>
+      // Toggle mobile menu
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      // Handle page transition for about link
+      function triggerAboutTransition() {
+        const wrapper = document.getElementById("pageWrapper");
+        wrapper.style.transform = "translateX(-100vw)";
+        wrapper.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "about.html";
+        }, 500);
+      }
+
+      // Handle Purpose selection and UI logic
+      function handlePurposeChange(value) {
+        const enrollOptions = document.getElementById("enrollOptions");
+        const messageBox = document.getElementById("messageBox");
+
+        if (value === "Enroll into Class") {
+          enrollOptions.classList.remove("hidden");
+          messageBox.required = false;
+        } else if (value === "Demo Class") {
+          enrollOptions.classList.add("hidden");
+          messageBox.required = false;
+        } else {
+          enrollOptions.classList.add("hidden");
+          messageBox.required = true;
         }
+      }
 
-        // Handle page transition for about link
-        function triggerAboutTransition() {
-          const wrapper = document.getElementById("pageWrapper");
-          wrapper.style.transform = "translateX(-100vw)";
-          wrapper.style.opacity = "0";
-          setTimeout(() => {
-            window.location.href = "about.html";
-          }, 500);
-        }
-
-        // Handle Purpose selection and UI logic
-        function handlePurposeChange(value) {
-          const enrollOptions = document.getElementById("enrollOptions");
-          const messageBox = document.getElementById("messageBox");
-
-          if (value === "Enroll into Class") {
-            enrollOptions.classList.remove("hidden");
-            messageBox.required = false;
-          } else if (value === "Demo Class") {
-            enrollOptions.classList.add("hidden");
-            messageBox.required = false;
-          } else {
-            enrollOptions.classList.add("hidden");
-            messageBox.required = true;
-          }
-        }
-
-        // Handle Purpose and Course buttons
-        document.addEventListener("DOMContentLoaded", function () {
-          // Purpose buttons
-          function selectPurpose(button, value) {
-            document.querySelectorAll(".purpose-btn").forEach((btn) => {
-              btn.classList.remove(
-                "bg-[#a94438]",
-                "text-white",
-                "border-[#7b1e1e]"
-              );
-              btn.classList.add(
-                "bg-[#fffaf0]",
-                "text-[#7b1e1e]",
-                "border-[#c69b58]"
-              );
-            });
-
-            button.classList.remove(
-              "bg-[#fffaf0]",
-              "text-[#7b1e1e]",
-              "border-[#c69b58]"
-            );
-            button.classList.add(
+      // Handle Purpose and Course buttons
+      document.addEventListener("DOMContentLoaded", function () {
+        // Purpose buttons
+        function selectPurpose(button, value) {
+          document.querySelectorAll(".purpose-btn").forEach((btn) => {
+            btn.classList.remove(
               "bg-[#a94438]",
               "text-white",
               "border-[#7b1e1e]"
             );
-
-            document.getElementById("purposeInput").value = value;
-            handlePurposeChange(value);
-          }
-
-          // Attach click handlers to purpose buttons
-          document.querySelectorAll(".purpose-btn").forEach((button) => {
-            button.addEventListener("click", () => {
-              const value = button.dataset.value;
-              selectPurpose(button, value);
-            });
+            btn.classList.add(
+              "bg-[#fffaf0]",
+              "text-[#7b1e1e]",
+              "border-[#c69b58]"
+            );
           });
 
-          // Course buttons
-          const courseButtons = document.querySelectorAll(".course-btn");
-          const hiddenContainer = document.getElementById("hiddenCourseInputs");
+          button.classList.remove(
+            "bg-[#fffaf0]",
+            "text-[#7b1e1e]",
+            "border-[#c69b58]"
+          );
+          button.classList.add(
+            "bg-[#a94438]",
+            "text-white",
+            "border-[#7b1e1e]"
+          );
 
-          courseButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-              const value = button.dataset.value;
+          document.getElementById("purposeInput").value = value;
+          handlePurposeChange(value);
+        }
 
-              if (button.classList.contains("selected")) {
-                button.classList.remove("selected");
-                button.classList.remove(
-                  "bg-[#a94438]",
-                  "text-white",
-                  "border-[#7b1e1e]"
-                );
-                button.classList.add(
-                  "bg-[#fffaf0]",
-                  "text-[#7b1e1e]",
-                  "border-[#c69b58]"
-                );
-
-                const inputToRemove = hiddenContainer.querySelector(
-                  `input[value="${value}"]`
-                );
-                if (inputToRemove) inputToRemove.remove();
-              } else {
-                button.classList.add("selected");
-                button.classList.remove(
-                  "bg-[#fffaf0]",
-                  "text-[#7b1e1e]",
-                  "border-[#c69b58]"
-                );
-                button.classList.add(
-                  "bg-[#a94438]",
-                  "text-white",
-                  "border-[#7b1e1e]"
-                );
-
-                const input = document.createElement("input");
-                input.type = "hidden";
-                input.name = "entry.832095546";
-                input.value = value;
-                hiddenContainer.appendChild(input);
-              }
-            });
+        // Attach click handlers to purpose buttons
+        document.querySelectorAll(".purpose-btn").forEach((button) => {
+          button.addEventListener("click", () => {
+            const value = button.dataset.value;
+            selectPurpose(button, value);
           });
+        });
 
-          // Form submission handler
-          document.getElementById("contactForm").addEventListener("submit", async function(event) {
+        // Course buttons
+        const courseButtons = document.querySelectorAll(".course-btn");
+        const hiddenContainer = document.getElementById("hiddenCourseInputs");
+
+        courseButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const value = button.dataset.value;
+
+            if (button.classList.contains("selected")) {
+              button.classList.remove("selected");
+              button.classList.remove(
+                "bg-[#a94438]",
+                "text-white",
+                "border-[#7b1e1e]"
+              );
+              button.classList.add(
+                "bg-[#fffaf0]",
+                "text-[#7b1e1e]",
+                "border-[#c69b58]"
+              );
+
+              const inputToRemove = hiddenContainer.querySelector(
+                `input[value="${value}"]`
+              );
+              if (inputToRemove) inputToRemove.remove();
+            } else {
+              button.classList.add("selected");
+              button.classList.remove(
+                "bg-[#fffaf0]",
+                "text-[#7b1e1e]",
+                "border-[#c69b58]"
+              );
+              button.classList.add(
+                "bg-[#a94438]",
+                "text-white",
+                "border-[#7b1e1e]"
+              );
+
+              const input = document.createElement("input");
+              input.type = "hidden";
+              input.name = "entry.832095546";
+              input.value = value;
+              hiddenContainer.appendChild(input);
+            }
+          });
+        });
+
+        // Form submission handler
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", async function (event) {
             event.preventDefault();
 
             const form = this;
@@ -614,7 +787,9 @@
             const message = formData.get("entry.775920779");
 
             if (!name || !phone || !purpose) {
-              alert("Please fill out all required fields: Name, Phone Number, and Purpose.");
+              alert(
+                "Please fill out all required fields: Name, Phone Number, and Purpose."
+              );
               return;
             }
             if (purpose === "Other" && !message) {
@@ -626,34 +801,37 @@
               const response = await fetch(form.action, {
                 method: "POST",
                 body: formData,
-                mode: "no-cors"
+                mode: "no-cors",
               });
 
               alert("Form submitted successfully!");
               form.reset();
-              document.querySelectorAll(".purpose-btn, .course-btn").forEach(btn => {
-                btn.classList.remove(
-                  "bg-[#a94438]",
-                  "text-white",
-                  "border-[#7b1e1e]"
-                );
-                btn.classList.add(
-                  "bg-[#fffaf0]",
-                  "text-[#7b1e1e]",
-                  "border-[#c69b58]"
-                );
-                btn.classList.remove("selected");
-              });
+              document
+                .querySelectorAll(".purpose-btn, .course-btn")
+                .forEach((btn) => {
+                  btn.classList.remove(
+                    "bg-[#a94438]",
+                    "text-white",
+                    "border-[#7b1e1e]"
+                  );
+                  btn.classList.add(
+                    "bg-[#fffaf0]",
+                    "text-[#7b1e1e]",
+                    "border-[#c69b58]"
+                  );
+                  btn.classList.remove("selected");
+                });
               document.getElementById("enrollOptions").classList.add("hidden");
               document.getElementById("hiddenCourseInputs").innerHTML = "";
               document.getElementById("messageBox").required = false;
             } catch (error) {
               console.error("Error submitting form:", error);
-              alert("An error occurred while submitting the form. Please try again.");
+              alert(
+                "An error occurred while submitting the form. Please try again."
+              );
             }
           });
-        });
-      </script>
-      
+      });
+    </script>
   </body>
 </html>

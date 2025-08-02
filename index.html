@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Gwendolyn:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
 
     <link
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap"
@@ -133,7 +134,7 @@
         </div>
 
         <a
-          href="index.html#courses"
+          href="courses.html"
           class="text-[#3e2723] hover:text-[#b7410e] transition"
           >Courses</a
         >
@@ -174,7 +175,7 @@
 
       <!-- Mobile Menu Dropdown -->
       <div
-        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg border-t border-[#d4af37] z-50 transition-all duration-300 max-h-0 overflow-hidden"
+        class="absolute top-full left-0 right-0 bg-[#fdf2d0] shadow-lg  z-50 transition-all duration-300 max-h-0 overflow-hidden"
         id="menu-content"
       >
         <div
@@ -186,7 +187,7 @@
           <a href="about.html#gurus">TablaGyan Gurus</a>
           <a href="tablavidya.html">TablaVidya</a>
           <a href="tablavidya.html#tabla-ustaads">Tabla Ustaads</a>
-          <a href="index.html#courses">Courses</a>
+          <a href="courses.html">Courses</a>
           <a href="contact.html">Contact</a>
           <a href="faq.html">FAQ</a>
         </div>
@@ -203,7 +204,7 @@
       ></audio>
 
       <!-- Music Toggle Icon -->
-      <div id="music-toggle" class="fixed top-28 right-5 z-50 cursor-pointer">
+      <div id="music-toggle" class="fixed top-40 right-5 z-50 cursor-pointer">
         <img
           id="music-icon"
           src="/static/volume-up.png"
@@ -289,13 +290,13 @@
 
       <!-- About Us Section -->
       <section
-        class="py-20 md:py-28 bg-[#fbf3e3] text-center relative overflow-hidden group cursor-pointer border-t-4 border-[#944431]"
+        class="py-12 md:py-12 bg-[#fbf3e3] text-center relative overflow-hidden group cursor-pointer border-t-4 border-[#944431]"
         onclick="window.location='about.html'"
       >
         <!-- Section Heading -->
         <h2
-          class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
-          style="font-family: 'Kalam', cursive"
+          class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-4 md:mb-4 z-10 relative tracking-wide"
+          style="font-family: 'Cinzel', serif"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -422,195 +423,161 @@
         </div>
       </section>
 
-      <!--courses offered-->
+      <!-- Courses Offered -->
       <section
         id="courses"
-        class="py-12 md:py-20 bg-white text-center relative z-10"
+        class="py-12 md:py-12 bg-white text-center relative z-0"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         <h2
           class="text-4xl md:text-5xl font-bold text-[#6e2e1a] mb-12 md:mb-16 z-10 relative tracking-wide"
-          style="font-family: 'Kalam', cursive"
+          style="font-family: 'Cinzel', serif"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
           Courses Offered
         </h2>
-        <div id="overlay"></div>
+
         <!-- Tabla Section -->
-        <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Tabla</h3>
+        <h3
+          class="text-xl font-semibold text-[#7b1e1e] mb-4 z-10 relative"
+          style="font-family: 'Libre Baskerville', serif"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
+        >
+          Tabla
+        </h3>
         <div
           class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4 mb-12"
           data-aos="zoom-in-up"
           data-aos-delay="300"
         >
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Beginner Tabla</h4>
-            <p class="short-desc text-sm">
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Beginner Tabla
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
               Basics of rhythm and hand practice.
             </p>
-            <p class="click-more mt-4 text-xs italic text-[#7b1e1e]">
+            <a
+              href="courses.html"
+              class="click-more mt-4 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
               Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <div class="text-sm leading-relaxed space-y-4">
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Core Skills Covered:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Understanding basic rhythm cycles (Taal).</li>
-                    <li>Correct hand positioning and posture.</li>
-                    <li>
-                      Mastering fundamental bols: Na, Ta, Tin, Dha, Dhin, etc.
-                    </li>
-                    <li>Clarity and consistency in sound production.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">Focus Areas:</h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Kayda, Paltas (simple patterns).</li>
-                    <li>
-                      Practice of Teen Taal (16 beats) in slow and medium tempo.
-                    </li>
-                    <li>
-                      Basic accompaniment techniques for Bhajans and light
-                      music.
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Practice Methods:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Repetition exercises for muscle memory.</li>
-                    <li>Metronome practice for rhythm consistency.</li>
-                    <li>Introduction to practice with Tanpura / Lehra app.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h5 class="font-semibold text-[#7b1e1e]">
-                    Outcomes After Completion:
-                  </h5>
-                  <ul class="list-disc list-inside pl-2">
-                    <li>Ability to play structured patterns independently.</li>
-                    <li>
-                      Confidence in performing simple compositions on stage.
-                    </li>
-                    <li>
-                      Preparedness to move to Intermediate Tabla training.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Intermediate Tabla</h4>
-            <p class="short-desc text-sm">Taals, improvisation basics.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Intermediate Tabla
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
+              Taals, improvisation basics.
             </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Exploring kaidas, relas, improvisation techniques, traditional
-                compositions, and accompaniments in classical settings.
-              </p>
-            </div>
+            <a
+              href="courses.html"
+              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
+              Click to know more
+            </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Advanced Tabla</h4>
-            <p class="short-desc text-sm">
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Advanced Tabla
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
               Stage performance & advanced taals.
             </p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
+            <a
+              href="courses.html"
+              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
               Click to know more
-            </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Advanced solo performance techniques, rare taals, accompaniment
-                mastery, stagecraft, and mentorship grooming.
-              </p>
-            </div>
+            </a>
           </div>
         </div>
 
         <!-- Vocals Section -->
-        <h3 class="text-xl font-semibold text-[#7b1e1e] mb-4">Vocals</h3>
+        <h3
+          class="text-xl font-semibold text-[#7b1e1e] mb-4 z-10 relative"
+          style="font-family: 'Libre Baskerville', serif"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
+        >
+          Vocals
+        </h3>
         <div
           class="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-8 px-4"
           data-aos="zoom-in-up"
           data-aos-delay="300"
         >
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Beginner Vocals</h4>
-            <p class="short-desc text-sm">Voice culture, basic ragas.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Beginner Vocals
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
+              Voice culture, basic ragas.
             </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Fundamentals of swaras, sargams, basic alankars, breath control,
-                and voice training for classical vocals.
-              </p>
-            </div>
+            <a
+              href="courses.html"
+              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
+              Click to know more
+            </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Intermediate Vocals</h4>
-            <p class="short-desc text-sm">Intermediate ragas & bandishes.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Intermediate Vocals
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
+              Intermediate ragas & bandishes.
             </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Mastering intermediate ragas, bandishes, taan patterns, breath
-                management, and classical presentation techniques.
-              </p>
-            </div>
+            <a
+              href="courses.html"
+              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
+              Click to know more
+            </a>
           </div>
 
           <div
-            class="course-box bg-yellow-100 p-6 rounded shadow w-full md:w-64 text-left cursor-pointer relative"
+            class="course-box bg-yellow-100 p-6 rounded-xl shadow-lg w-full md:w-64 text-left cursor-pointer z-10"
           >
-            <h4 class="text-lg font-bold mb-2">Advanced Vocals</h4>
-            <p class="short-desc text-sm">Performance level training.</p>
-            <p class="click-more mt-2 text-xs italic text-[#7b1e1e]">
-              Click to know more
+            <h4 class="text-lg font-bold text-[#7b1e1e] mb-2">
+              Advanced Vocals
+            </h4>
+            <p class="short-desc text-sm text-[#4b2e2e]">
+              Performance level training.
             </p>
-            <div class="detailed hidden mt-4">
-              <p class="text-sm leading-relaxed">
-                Advanced raga exploration, khayal gayaki, intricate taans, stage
-                presence, and guidance for professional pathways.
-              </p>
-            </div>
+            <a
+              href="courses.html"
+              class="click-more mt-2 text-xs italic text-[#7b1e1e] underline hover:text-[#b7410e] transition"
+            >
+              Click to know more
+            </a>
           </div>
         </div>
       </section>
 
       <!--photo section-->
-      <section class="py-16 bg-[#fef7e5]">
+      <section class="py-4 bg-[#fef7e5]">
         <!-- Section Title -->
         <h2
-          class="text-3xl md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
+          class="pt-12 md:text-4xl font-bold text-center text-[#7b1e1e] mb-10"
+          style="font-family: 'Cinzel', serif"
         >
           Photo Gallery
         </h2>
@@ -678,79 +645,206 @@
     </div>
 
     <!--youtube-->
-    <section class="py-16 bg-[#fef7e5]">
-      <div class="max-w-5xl mx-auto px-4 md:px-8 space-y-16">
-        <!-- 🎥 Recent Class Video -->
-        <div class="space-y-4">
-          <div
-            class="w-[640px] h-[360px] mx-auto rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/qrCc6Ui4ZuU?si=ia_EmHHH4F8Hclma"
-              title="TablaGyan Class Video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
+    <section class="py-4 bg-[#fef7e5]">
+<section class="py-16 bg-[#fef7e5]">
+  <div class="w-full px-2 space-y-16">
+    <!-- 🎥 Recent Class Videos -->
+    <div class="space-y-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e] playfair-display gwendolyn-bold animate-fade-up text-center">
+        Recent Class Videos
+      </h2>
+      <div class="relative">
+        <!-- Carousel Container -->
+        <div class="class-video-carousel overflow-hidden whitespace-nowrap">
+          <div class="inline-flex gap-6 px-4 animate-infinite-scroll">
+            <!-- Original Video Set -->
+            <!-- Video 1 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Beginner Techniques">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Beginner Techniques"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://youtube.com/embed/laYJm7wlKrg?si=wG8oZ0f3fHYpTKFf?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://youtube.com/embed/_BvXnK8u-Tk?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:12</span>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://youtube.com/embed/PEwsGeUbFK8?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:45</span>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Advanced Performance">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Advanced Performance"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
+            </div>
+
+            <!-- Duplicated Video Set for Infinite Scroll -->
+            <!-- Video 1 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Beginner Techniques">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Beginner Techniques"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://youtube.com/embed/_BvXnK8u-Tk?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:12</span>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Intermediate Taal Practice">
+              <iframe
+                class="w-full h-full"
+                src="https://youtube.com/embed/PEwsGeUbFK8?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Intermediate Taal Practice"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:45</span>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="class-video-card w-[480px] h-[270px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative" data-title="Advanced Performance">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/qrCc6Ui4ZuU?autoplay=0&controls=1"
+                title="TablaGyan Class Video: Advanced Performance"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <span class="absolute top-2 right-2 text-white text-sm open-sans" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:23</span>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section class="py-12 md:py-20 bg-white text-center">
-          <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e]">
-            Recent Shorts
-          </h2>
 
-          <div
-            class="flex flex-col md:flex-row justify-center items-center gap-8 px-4"
-          >
-            <!-- Short 1 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 1"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-
-            <!-- Short 2 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 2"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
-
-            <!-- Short 3 -->
-            <div
-              class="w-[200px] h-[360px] rounded-lg overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black"
-            >
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/he94r784PI8?si=R2XTzlm0CRBHNlr5"
-                title="TablaGyan Short 3"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
-              </iframe>
-            </div>
+<!--shorts section-->
+<section class="py-16 bg-[#fef7e5]">
+  <div class="w-full px-2 space-y-16">
+    <!-- Recent Shorts Section -->
+    <section class="py-12 md:py-12 bg-white text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#7b1e1e] gwendolyn-bold animate-fade-up">
+        Recent Shorts
+      </h2>
+      <div class="relative shorts-carousel">
+        <div class="shorts-container flex flex-row justify-center gap-6 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+          <!-- Video 1 -->
+          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-1" data-title="Beginner Taal Practice">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
           </div>
-        </section>
+
+          <!-- Video 2 -->
+          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-2" data-title="Intermediate Raga Session">
+            <iframe class="w-full h-full" src="https://youtube.com/embed/Fu3p5lcHBD4?si=yh1ptddA0wLO3xK9?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:55</span>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-3" data-title="Advanced Performance">
+            <iframe class="w-full h-full" src="https://youtube.com/embed/pBFKJ_DDL5o?si=_pHsXtkLM-7I9knC?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">1:34</span>
+          </div>
+
+                    <!-- Video 1 -->
+          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-1" data-title="Beginner Taal Practice">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/he94r784PI8?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:54</span>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="short-card w-[280px] h-[498px] rounded-[20px] overflow-hidden shadow-xl border-4 border-[#c69b58] bg-black relative animate-slide-in-2" data-title="Intermediate Raga Session">
+            <iframe class="w-full h-full" src="https://youtube.com/embed/Fu3p5lcHBD4?si=yh1ptddA0wLO3xK9?autoplay=0&controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="absolute top-2 right-2 text-white text-sm hubballi-regular" style="text-shadow: 0 1px 2px rgba(0,0,0,0.5);">0:55</span>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+
       </div>
     </section>
 
@@ -773,6 +867,35 @@
       </div>
     </section>
 
+          <!-- CTA Section -->
+      <section class="py-12 bg-red-50">
+        <div class="text-center max-w-3xl mx-auto px-6">
+          <h3
+            class="text-2xl md:text-3xl font-bold mb-4"
+            style="font-family: 'Cinzel', serif"
+            data-aos="fade-up"
+          >
+            Ready to Start Your Musical Journey?
+          </h3>
+          <p
+            class="mb-6 text-gray-700"
+            style="font-family: 'Hubballi', sans-serif"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Whether you're a beginner or an advanced musician, TablaGyan offers courses tailored to your needs. Join our community and let rhythm and melody transform your life.
+          </p>
+          <a
+            href="contact.html"
+            class="inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition"
+            style="font-family: 'Libre Baskerville', serif"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Contact Us to Enroll
+          </a>
+        </div>
+      </section>
     <script
       src="https://static.elfsight.com/platform/platform.js"
       async
@@ -787,7 +910,7 @@
 
     <!-- Footer -->
     <footer
-      class="mt-6 md:mt-10 bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
+      class=" bg-gray-100 text-center text-xs md:text-sm p-4 md:p-6 text-gray-600"
     >
       <div class="flex justify-center space-x-4 md:space-x-6 mb-4">
         <!-- Instagram -->
@@ -861,9 +984,6 @@
 
       <p>© 2025 TablaGyan. All rights reserved.</p>
     </footer>
-    <a href="https://www.flaticon.com/free-icons/tabla" title="tabla icons"
-      >Tabla icons created by Icongeek26 - Flaticon</a
-    >
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
