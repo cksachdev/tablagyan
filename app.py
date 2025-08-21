@@ -25,7 +25,30 @@ def courses():
 
 @app.route("/gallery")
 def gallery():
-    return render_template("gallery.html")
+    # Build dynamic albums from subfolders in static/gallery
+    gallery_root = os.path.join(app.static_folder, "gallery")
+
+    albums = []
+    if os.path.isdir(gallery_root):
+        for album_dir in sorted(os.listdir(gallery_root)):
+            absolute_album_path = os.path.join(gallery_root, album_dir)
+            if not os.path.isdir(absolute_album_path):
+                continue
+
+            image_urls = []
+            for filename in sorted(os.listdir(absolute_album_path)):
+                if filename.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".gif")):
+                    image_urls.append(
+                        url_for("static", filename=f"gallery/{album_dir}/{filename}")
+                    )
+
+            if image_urls:
+                albums.append({
+                    "name": album_dir.replace("_", " "),
+                    "images": image_urls,
+                })
+
+    return render_template("gallery.html", albums=albums)
 
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
