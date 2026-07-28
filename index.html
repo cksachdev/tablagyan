@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -133,13 +133,13 @@
         <div class="flex flex-col">
           <span
             class="text-4xl md:text-5xl text-[#7b1e1e] font-bold leading-none"
-            style="font-family: 'Cinzel', serif"
+            style="font-family: &quot;Cinzel&quot;, serif"
           >
             Tabla<span class="text-[#c69b58]">Gyan</span>
           </span>
           <span
             class="text-xs md:text-sm text-[#3B3B3B] italic font-serif tracking-widest mt-1 ml-6"
-            style="font-family: 'Libre Baskerville', serif"
+            style="font-family: &quot;Libre Baskerville&quot;, serif"
           >
             Academy of Music
           </span>
@@ -148,7 +148,7 @@
 
       <div
         class="hidden md:flex space-x-8 text-[1rem] font-medium relative"
-        style="font-family: 'Libre Baskerville', serif"
+        style="font-family: &quot;Libre Baskerville&quot;, serif"
       >
         <a
           href="index.html"
@@ -222,7 +222,7 @@
       >
         <div
           class="flex flex-col space-y-2 p-4 text-lg text-[#3B3B3B]"
-          style="font-family: 'Libre Baskerville', serif"
+          style="font-family: &quot;Libre Baskerville&quot;, serif"
         >
           <a
             href="index.html"
@@ -332,14 +332,17 @@
 
             <h1
               class="rotating-text absolute top-0 left-0 w-full text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 leading-tight"
-              style="font-family: 'Kalam', cursive; font-weight: 700"
+              style="font-family: &quot;Kalam&quot;, cursive; font-weight: 700"
             >
               तबलाग्यान्
             </h1>
 
             <h1
               class="rotating-text absolute top-0 left-0 w-full text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-white opacity-0 transition-opacity duration-1000 leading-tight"
-              style="font-family: 'Hubballi', sans-serif; font-weight: 400"
+              style="
+                font-family: &quot;Hubballi&quot;, sans-serif;
+                font-weight: 400;
+              "
             >
               ತಬಲಾಗ್ಯಾನ್
             </h1>
@@ -429,7 +432,7 @@
           <div class="text-center mb-20">
             <h2
               class="text-4xl md:text-5xl font-bold text-[#7b1e1e] mb-4 tracking-wide"
-              style="font-family: 'Cinzel', serif"
+              style="font-family: &quot;Cinzel&quot;, serif"
             >
               Our Curriculum
             </h2>
@@ -447,7 +450,7 @@
               <div class="h-[1px] w-12 bg-[#c69b58]/50"></div>
               <h3
                 class="text-2xl md:text-3xl font-bold text-[#2a0a0a] uppercase tracking-widest"
-                style="font-family: 'Cinzel', serif"
+                style="font-family: &quot;Cinzel&quot;, serif"
               >
                 Tabla
               </h3>
@@ -686,7 +689,7 @@
               <div class="h-[1px] w-12 bg-[#c69b58]/50"></div>
               <h3
                 class="text-2xl md:text-3xl font-bold text-[#2a0a0a] uppercase tracking-widest"
-                style="font-family: 'Cinzel', serif"
+                style="font-family: &quot;Cinzel&quot;, serif"
               >
                 Vocals
               </h3>
@@ -996,7 +999,7 @@
             </h2>
             <h3
               class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
-              style="font-family: 'Cinzel', serif"
+              style="font-family: &quot;Cinzel&quot;, serif"
             >
               Photo Gallery
             </h3>
@@ -1143,7 +1146,7 @@
         const thumbnailScroll = document.getElementById("thumbnailScroll");
         // Select the main frame container for hover events
         const mainImageContainer = document.querySelector(
-          ".group.w-full.aspect-\\[16\\/9\\]"
+          ".group.w-full.aspect-\\[16\\/9\\]",
         );
 
         // Function to update the main image and counter
@@ -1198,7 +1201,7 @@
         onclick="setImage(${index})"
         alt="Gallery Image ${index + 1}"
       />
-    `
+    `,
             )
             .join("");
           highlightThumbnail();
@@ -1267,7 +1270,7 @@
       </script>
     </div>
 
-    <!--youtube-->
+    <!--youtube - videos-->
     <section
       class="w-full bg-[#FFF8F0] pt-0 pb-24 overflow-hidden font-serif relative"
     >
@@ -1288,7 +1291,7 @@
           </h2>
           <h3
             class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
-            style="font-family: 'Cinzel', serif"
+            style="font-family: &quot;Cinzel&quot;, serif"
           >
             Class Performances
           </h3>
@@ -1316,7 +1319,13 @@
                   src="https://youtube.com/embed/5S7uTzBb4h0?autoplay=0&controls=1&rel=0"
                   title="Beginner Techniques"
                   frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
                 <span
@@ -1334,7 +1343,13 @@
                   src="https://youtube.com/embed/Gdr-sSHs96A?autoplay=0&controls=1&rel=0"
                   title="Intermediate Taal"
                   frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
                 <span
@@ -1352,7 +1367,13 @@
                   src="https://youtube.com/embed/KkccT_8eKAU?autoplay=0&controls=1&rel=0"
                   title="Kaida Practice"
                   frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
                 <span
@@ -1370,7 +1391,13 @@
                   src="https://youtube.com/embed/Yq_u9x8A0zY?autoplay=0&controls=1&rel=0"
                   title="Rela Practice"
                   frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
                 <span
@@ -1388,7 +1415,13 @@
                   src="https://youtube.com/embed/sON_wqNzhKM?autoplay=0&controls=1&rel=0"
                   title="Advanced Performance"
                   frameborder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
                   allowfullscreen
                 ></iframe>
                 <span
@@ -1481,7 +1514,7 @@
             href="https://youtube.com/@tablagyanacademyofmusic?sub_confirmation=1"
             target="_blank"
             class="inline-flex items-center gap-3 bg-[#c4302b] text-white px-8 py-4 rounded-full font-bold text-lg tracking-widest shadow-lg border-2 border-[#c69b58] hover:bg-[#7b1e1e] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-            style="font-family: 'Cinzel', serif"
+            style="font-family: &quot;Cinzel&quot;, serif"
           >
             <svg
               class="w-6 h-6 fill-current group-hover:scale-110 transition-transform"
@@ -1497,6 +1530,210 @@
             class="text-[#c69b58] text-xs mt-3 font-sans tracking-wide uppercase"
           >
             Stay updated with new performances
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--youtube - podcasts-->
+    <section
+      class="w-full bg-[#FFF8F0] pt-0 pb-24 overflow-hidden font-serif relative"
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+        style="
+          background-image: radial-gradient(#7b1e1e 1px, transparent 1px);
+          background-size: 30px 30px;
+        "
+      ></div>
+
+      <div class="w-full px-2 space-y-8 relative z-10">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold tracking-[0.25em] text-[#c69b58] uppercase mb-3"
+          >
+            Stories Beyond Music
+          </h2>
+          <h3
+            class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
+            style="font-family: &quot;Cinzel&quot;, serif"
+          >
+            Podcast Episodes
+          </h3>
+          <div class="w-24 h-1 bg-[#c69b58] mx-auto mt-6"></div>
+        </div>
+
+        <div class="relative w-full group">
+          <div
+            class="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#FFF8F0] to-transparent z-20 pointer-events-none"
+          ></div>
+          <div
+            class="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#FFF8F0] to-transparent z-20 pointer-events-none"
+          ></div>
+
+          <div class="flex overflow-hidden">
+            <div
+              class="flex gap-8 py-4 animate-infinite-scroll group-hover:paused"
+            >
+              <!-- Podcast 1 -->
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/l1OfMBgDKHU?rel=0"
+                  title="Podcast Episode 1"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <!-- Podcast 2 -->
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/-FyO5O2atfw?rel=0"
+                  title="Podcast Episode 2"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <!-- Podcast 3 -->
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/szHc6YMuk48?rel=0"
+                  title="Podcast Episode 3"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <!-- Podcast 4 -->
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/qOxV3u4J9tw?rel=0"
+                  title="Podcast Episode 4"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                  "
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <!-- Duplicate for seamless infinite scroll -->
+
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/l1OfMBgDKHU?rel=0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/-FyO5O2atfw?rel=0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/szHc6YMuk48?rel=0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div
+                class="relative flex-shrink-0 w-[300px] h-[170px] md:w-[480px] md:h-[270px] rounded-xl overflow-hidden shadow-xl border-[4px] border-[#7b1e1e] ring-2 ring-[#c69b58] bg-black transition-transform duration-300 hover:scale-105"
+              >
+                <iframe
+                  class="w-full h-full"
+                  loading="lazy"
+                  src="https://www.youtube.com/embed/qOxV3u4J9tw?rel=0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center pt-8 pb-4" data-aos="fade-up">
+          <a
+            href="https://youtube.com/playlist?list=PLZre2PC7fCgOKAOrHJ9s6vtD6_YLGO8Xu&si=VZsorexgtl8-Sx1L"
+            target="_blank"
+            class="inline-flex items-center gap-3 bg-[#c4302b] text-white px-8 py-4 rounded-full font-bold text-lg tracking-widest shadow-lg border-2 border-[#c69b58] hover:bg-[#7b1e1e] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+            style="font-family: &quot;Cinzel&quot;, serif"
+          >
+            <svg
+              class="w-6 h-6 fill-current group-hover:scale-110 transition-transform"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.43.029 5.804 0 12c-.029 6.185.458 8.566 4.385 8.816 3.599.245 11.626.245 15.23 0C23.511 20.57 23.971 18.196 24 12c.029-6.185-.458-8.566-4.385-8.816zm-10.615 12.816v-7.632l6 3.816-6 3.816z"
+              />
+            </svg>
+            <span>Explore the Podcast Playlist</span>
+          </a>
+
+          <p
+            class="text-[#c69b58] text-xs mt-3 font-sans tracking-wide uppercase"
+          >
+            Tune in to inspiring conversations and musical journeys
           </p>
         </div>
       </div>
@@ -1555,7 +1792,7 @@
           </h2>
           <h3
             class="text-3xl md:text-4xl font-bold text-[#7b1e1e]"
-            style="font-family: 'Cinzel', serif"
+            style="font-family: &quot;Cinzel&quot;, serif"
           >
             Voices of the Academy
           </h3>
@@ -1622,13 +1859,13 @@
             <div class="text-center md:text-left md:max-w-2xl">
               <h3
                 class="text-3xl md:text-4xl font-bold text-white mb-4"
-                style="font-family: 'Cinzel', serif"
+                style="font-family: &quot;Cinzel&quot;, serif"
               >
                 Ready to Find Your <span class="text-[#c69b58]">Rhythm?</span>
               </h3>
               <p
                 class="text-[#FFF8F0]/80 text-lg leading-relaxed font-light"
-                style="font-family: 'Hubballi', sans-serif"
+                style="font-family: &quot;Hubballi&quot;, sans-serif"
               >
                 Join our legacy of tradition and excellence. <br />Let rhythm
                 and melody transform your life today.
@@ -1723,7 +1960,7 @@
               <div class="flex items-center gap-3">
                 <h2
                   class="text-3xl font-bold text-[#7b1e1e]"
-                  style="font-family: 'Cinzel', serif"
+                  style="font-family: &quot;Cinzel&quot;, serif"
                 >
                   Tabla<span class="text-[#c69b58]">Gyan</span>
                 </h2>
@@ -1731,7 +1968,7 @@
 
               <p
                 class="text-lg leading-relaxed text-[#5a4a42]"
-                style="font-family: 'Hubballi', sans-serif"
+                style="font-family: &quot;Hubballi&quot;, sans-serif"
               >
                 A sanctuary for rhythm seekers. Preserving the ancient tradition
                 of Indian Classical Music while inspiring the next generation of
